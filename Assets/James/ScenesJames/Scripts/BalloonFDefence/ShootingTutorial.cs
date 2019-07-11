@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class ShootingTutorial : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public SpawnEnemy firstEnemySpawn;
+    public GameObject scoreBoard;
 
-    // Update is called once per frame
-    void Update()
+    public void StartSpawningEnemies()
     {
-        
+        scoreBoard.SetActive(true);
+        firstEnemySpawn.isSpawning = true;
+        Destroy(gameObject);
     }
 }
