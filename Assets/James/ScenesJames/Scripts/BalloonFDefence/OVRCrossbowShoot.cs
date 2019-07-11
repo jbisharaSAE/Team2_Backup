@@ -13,9 +13,15 @@ namespace Nokobot.Assets.Crossbow
         public ScoreManager myScoreScript;
         //public Text testingTextButton;
         public Transform[] arrowLocations;
+        public ShootingTutorial tutorialBoard;
+        public GameObject tutorial1;
+        public GameObject tutorial2;
+        
 
         private float timer;
         private bool myToggle;
+        private bool isTutorial = true;
+        private bool runOnce = true;
 
         public bool specialAbility = false;
         public float shootGap = 0.4f;
@@ -43,10 +49,10 @@ namespace Nokobot.Assets.Crossbow
             float indexTrigger = OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger);
             timer += Time.deltaTime;
 
-            
+
             if (indexTrigger != 0.0f)
             {
-                if(timer >= shootGap)
+                if (timer >= shootGap)
                 {
                     //shootAudioSource.clip = arrowShoot;
                     //shootAudioSource.Play();
@@ -57,8 +63,19 @@ namespace Nokobot.Assets.Crossbow
                     //shootAudioSource.clip = arrowReload;
                     //shootAudioSource.Play();
                 }
-                
+
+                // to flick to the next tutorial slide, once player has  shot an arrow
+                if (runOnce)
+                {
+                    runOnce = false;
+                    tutorial1.SetActive(false);
+                    tutorial2.SetActive(true);
+                }
+
             }
+
+
+
 
             //Ray ray;
 
@@ -86,6 +103,16 @@ namespace Nokobot.Assets.Crossbow
             //    }
 
             //}
+            if (isTutorial)
+            {
+                specialAbility = true;
+                
+            }
+            else
+            {
+
+                tutorialBoard.SendMessage("StartSpawningEnemies");
+            }
 
             if (myScoreScript.progressScore >= 100f)
             {
@@ -97,21 +124,18 @@ namespace Nokobot.Assets.Crossbow
             {
                 if (OVRInput.Get(OVRInput.Button.One))
                 {
+                    isTutorial = false;
                     specialAbility = false;
                     myToggle = true;
+                    
                 }
 
             }
 
             if (myToggle)
             {
-                foreach(Transform arrowLoc in arrowLocations)
-                {
-                    Instantiate(arrowPrefab, arrowLoc.position, arrowLoc.rotation).GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * shotPower);
-                }
-                myToggle = false;
-                myScoreScript.progressScore = 0f;
-                myScoreScript.pointsAdded = 0;
+                MultishotAbility();
+                
             }
             
             
@@ -145,6 +169,17 @@ namespace Nokobot.Assets.Crossbow
         //        myCircle.SetActive(false);
         //    }
         //}
+
+        private void MultishotAbility()
+        {
+            foreach (Transform arrowLoc in arrowLocations)
+            {
+                Instantiate(arrowPrefab, arrowLoc.position, arrowLoc.rotation).GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * shotPower);
+            }
+            myToggle = false;
+            myScoreScript.progressScore = 0f;
+            myScoreScript.pointsAdded = 0;
+        }
     }
 
     
