@@ -16,6 +16,7 @@ namespace Nokobot.Assets.Crossbow
 
         private float timer;
         private bool myToggle;
+        private bool isTutorial = true;
 
         public bool specialAbility = false;
         public float shootGap = 0.4f;
@@ -43,22 +44,26 @@ namespace Nokobot.Assets.Crossbow
             float indexTrigger = OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger);
             timer += Time.deltaTime;
 
-            
-            if (indexTrigger != 0.0f)
+            if (!isTutorial)
             {
-                if(timer >= shootGap)
+                if (indexTrigger != 0.0f)
                 {
-                    //shootAudioSource.clip = arrowShoot;
-                    //shootAudioSource.Play();
-                    timer = 0f;
+                    if (timer >= shootGap)
+                    {
+                        //shootAudioSource.clip = arrowShoot;
+                        //shootAudioSource.Play();
+                        timer = 0f;
 
-                    Instantiate(arrowPrefab, arrowLocation.position, arrowLocation.rotation).GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * shotPower);
+                        Instantiate(arrowPrefab, arrowLocation.position, arrowLocation.rotation).GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * shotPower);
 
-                    //shootAudioSource.clip = arrowReload;
-                    //shootAudioSource.Play();
+                        //shootAudioSource.clip = arrowReload;
+                        //shootAudioSource.Play();
+                    }
+
                 }
-                
             }
+
+            
 
             //Ray ray;
 
