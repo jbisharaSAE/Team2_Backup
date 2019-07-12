@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
+using System.Collections;
+using System.Collections.Generic;
 
 public class EnemyScript : MonoBehaviour
 {
@@ -34,4 +36,13 @@ public class EnemyScript : MonoBehaviour
             Destroy(collision.gameObject);
         }
     }
+    
+    public IEnumerator SlowDownEnemy()
+    {
+        randomMySpeed *= 0.5f;
+        yield return new WaitForSeconds(3);
+        randomMySpeed *= 2f;
+
+    }
+    
 }

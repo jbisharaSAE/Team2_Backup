@@ -36,16 +36,7 @@ public class PowerUpManager : MonoBehaviour
             crossBowScript.shootGap = 0.4f;
         }
 
-        if (slowTimeTimer > 0f)
-        {
-            Time.timeScale = 0.5f;
-            slowTimeTimer -= Time.deltaTime;
-        }
-        else
-        {
-            Time.timeScale = 1f;
-        }
-
+      
     }
 
 
@@ -57,7 +48,13 @@ public class PowerUpManager : MonoBehaviour
 
     public void OrangePowerUpHit()
     {
-        rapidFireTimer = 2.5f;
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+        foreach(GameObject enemy in enemies)
+        {
+            enemy.GetComponent<EnemyScript>().StartCoroutine(enemy.GetComponent<EnemyScript>().SlowDownEnemy());
+                //StartCoroutine(enemy.SlowDownEnemy());
+        }
     }
 
     public void GreenPowerUpHit()
