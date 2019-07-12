@@ -8,7 +8,7 @@ public class SpawnEnemy : MonoBehaviour
     public bool isSpawning;
     public SpawnEnemyManager myManagerScript;
 
-    private bool runOnce;
+    public bool runOnce;
 
     [Tooltip("Spawn index of this spawn enemy object (level 1 .. 4) ")]
     public int spawnIndex;

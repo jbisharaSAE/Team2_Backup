@@ -17,7 +17,7 @@ public class PowerUpBalloon : MonoBehaviour
     {
         powerUpManagerScript = GameObject.Find("EGO Spawning PowerUP Balloons").GetComponent<PowerUpManager>();
         rb = gameObject.GetComponent<Rigidbody>();
-        speed = Random.Range(50f, 80f);
+        speed = Random.Range(60f, 80f);
     }
     
     void Start()

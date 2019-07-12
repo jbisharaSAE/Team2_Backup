@@ -9,7 +9,7 @@ public class ShootingTutorial : MonoBehaviour
 
     public void StartSpawningEnemies()
     {
-        scoreBoard.SetActive(true);
+        //scoreBoard.SetActive(true);
         firstEnemySpawn.isSpawning = true;
         Destroy(gameObject);
     }

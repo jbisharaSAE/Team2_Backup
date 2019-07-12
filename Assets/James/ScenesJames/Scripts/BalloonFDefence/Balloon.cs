@@ -70,23 +70,25 @@ public class Balloon : MonoBehaviour
             //pink balloon
             case 0:
                 myObj = Instantiate(fireworks[0], transform.position, Quaternion.identity);
-                Destroy(myObj, 2.5f);
-                Destroy(gameObject, 2.5f);
+                myObj.transform.up = Vector3.up;
+                Destroy(myObj, 3.5f);
+                Destroy(gameObject, 3.5f);
                 scoreManagerScript.UpdateScore(pinkBalloonPoints);
                 break;
             //red balloon
             case 1:
                 myObj = Instantiate(fireworks[1], transform.position, Quaternion.identity);
-                Destroy(myObj, 2.5f);
-                Destroy(gameObject, 2.5f);
+                myObj.transform.up = Vector3.up;
+                Destroy(myObj, 3.5f);
+                Destroy(gameObject, 3.5f);
                 scoreManagerScript.UpdateScore(redBalloonPoints);
                 break;
             //white ballon
             case 2:
                 myObj = Instantiate(fireworks[2], transform.position, Quaternion.identity);
                 myObj.transform.up = Vector3.up;
-                Destroy(myObj, 2.5f);
-                Destroy(gameObject, 2.5f);
+                Destroy(myObj, 3.5f);
+                Destroy(gameObject, 3.5f);
                 scoreManagerScript.UpdateScore(whiteBalloonPoints);
                 break;
         }

@@ -114,9 +114,9 @@ MonoBehaviour:
   - {fileID: 2100000, guid: d36029a580dcd4f45a532bd9eccbf6ed, type: 2}
   - {fileID: 2100000, guid: 998cd19dc0160364b857f79f38e1b525, type: 2}
   fireworks:
-  - {fileID: 4033321828601655088, guid: 5061f9a7a98c5304f801c00079ad3313, type: 3}
-  - {fileID: 4033321828601655088, guid: 5061f9a7a98c5304f801c00079ad3313, type: 3}
-  - {fileID: 4033321828601655088, guid: 5061f9a7a98c5304f801c00079ad3313, type: 3}
+  - {fileID: 4033321828601655088, guid: 896e6ecf117fca642a861683447be3e7, type: 3}
+  - {fileID: 4033321828601655088, guid: 896e6ecf117fca642a861683447be3e7, type: 3}
+  - {fileID: 4033321828601655088, guid: 896e6ecf117fca642a861683447be3e7, type: 3}
   scoreManagerScript: {fileID: 0}
   balloonPop: {fileID: 8300000, guid: 4836ad6ccf5578947adcafb2f150f2af, type: 3}
   fireWorkSound: {fileID: 8300000, guid: 594258cfc5b22dd459b2869ee5b57f5f, type: 3}

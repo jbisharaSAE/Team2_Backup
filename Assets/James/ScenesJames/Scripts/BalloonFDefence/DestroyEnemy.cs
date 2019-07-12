@@ -11,6 +11,7 @@ public class DestroyEnemy : MonoBehaviour
 
     private void Start()
     {
+        gateAttackSource = gameObject.GetComponent<AudioSource>();
         gateAttackSource.clip = gateAttackSFX;
     }
 

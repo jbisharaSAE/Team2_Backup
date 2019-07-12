@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6121730004373186646}
   - component: {fileID: 6121730004373186647}
   - component: {fileID: 3330949860686958926}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PowerUp Balloon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 6121730004373186644}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -31.569092, y: 46.724236, z: 84.0889}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 6, y: 6, z: 6}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -110,7 +110,6 @@ MonoBehaviour:
   - {fileID: 2100000, guid: fc40cb9b601267642960865679e3e34d, type: 2}
   - {fileID: 2100000, guid: 04f5c9f4d3c27b040b96a045b5c10324, type: 2}
   powerUpManagerScript: {fileID: 0}
-  speed: 30
 --- !u!54 &3330949860686958926
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -118,6 +118,7 @@ namespace Nokobot.Assets.Crossbow
             {
                 specialAbility = true;
                 
+
             }
 
             if (specialAbility)
@@ -127,7 +128,8 @@ namespace Nokobot.Assets.Crossbow
                     isTutorial = false;
                     specialAbility = false;
                     myToggle = true;
-                    
+                    //Debug.Log("testing special ability");
+
                 }
 
             }
@@ -172,6 +174,7 @@ namespace Nokobot.Assets.Crossbow
 
         private void MultishotAbility()
         {
+            //Debug.Log("testing special function");
             foreach (Transform arrowLoc in arrowLocations)
             {
                 Instantiate(arrowPrefab, arrowLoc.position, arrowLoc.rotation).GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * shotPower);

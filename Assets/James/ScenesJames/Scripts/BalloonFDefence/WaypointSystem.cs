@@ -25,26 +25,41 @@ public class WaypointSystem : MonoBehaviour
     void Update()
     {
         // does a check to see if we need to start moving the player
-        if (currentIndex != destIndex)
-        {
-                // starts moving the player to the next waypoint position
-                if(player.transform.position != waypoints[currentIndex + 1].transform.position)
-                {
-                    player.transform.position = Vector3.MoveTowards(player.transform.position, waypoints[currentIndex + 1].transform.position, speed * Time.deltaTime);
-                }
-                else
-                {
-                    if(currentIndex == (waypoints.Length - 1))
-                    {
-                    currentIndex = 0;
-                    }
-                    else
-                    {
-                        ++currentIndex;
-                    }
+
+
+
+        //if (currentIndex != destIndex)
+        //{
+        //        // starts moving the player to the next waypoint position
+        //        if(player.transform.position != waypoints[currentIndex + 1].transform.position)
+        //        {
+        //            player.transform.position = Vector3.MoveTowards(player.transform.position, waypoints[currentIndex + 1].transform.position, speed * Time.deltaTime);
+        //        }
+        //        else
+        //        {
+        //            if(currentIndex == (waypoints.Length - 1))
+        //            {
+        //            currentIndex = 0;
+        //            }
+        //            else
+        //            {
+        //                ++currentIndex;
+        //            }
                     
-                }
+        //        }
    
+        //}
+
+        if (isMoving)
+        {
+            player.transform.position = Vector3.MoveTowards(player.transform.position, waypoints[destIndex].transform.position, speed * Time.deltaTime);
+
+            float getDistance = Vector3.Distance(player.transform.position, waypoints[destIndex].transform.position);
+
+            if(getDistance < 0.1)
+            {
+                isMoving = false;
+            }
         }
 
         
@@ -53,11 +68,11 @@ public class WaypointSystem : MonoBehaviour
     public void ChangePlayerPosition()
 
     {
-        
 
+        isMoving = true;
         // changes destination index to start moving the player to the next waypoint
         destIndex += 1;
         destIndex %= waypoints.Length;
-        Debug.Log("TestingMethodCall");
+        //Debug.Log("TestingMethodCall");
     }
 }

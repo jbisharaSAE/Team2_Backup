@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 54315726283532316}
   - component: {fileID: 65845300160949190}
   - component: {fileID: 9103460057825064054}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Arrow_Blue
   m_TagString: Arrow
   m_Icon: {fileID: 0}
@@ -249,7 +249,7 @@ GameObject:
   - component: {fileID: 136351431453055900}
   - component: {fileID: 2351709323545530445}
   - component: {fileID: 1844604111964645594}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: HitCollider
   m_TagString: Arrow
   m_Icon: {fileID: 0}
