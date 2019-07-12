@@ -70,6 +70,7 @@ namespace Nokobot.Assets.Crossbow
                     runOnce = false;
                     tutorial1.SetActive(false);
                     tutorial2.SetActive(true);
+                    StartCoroutine(StartSpawningEnemies());
                 }
 
             }
@@ -103,16 +104,7 @@ namespace Nokobot.Assets.Crossbow
             //    }
 
             //}
-            if (isTutorial)
-            {
-                specialAbility = true;
-                
-            }
-            else
-            {
-
-                tutorialBoard.SendMessage("StartSpawningEnemies");
-            }
+          
 
             if (myScoreScript.progressScore >= 100f)
             {
@@ -125,7 +117,7 @@ namespace Nokobot.Assets.Crossbow
             {
                 if (OVRInput.Get(OVRInput.Button.One))
                 {
-                    isTutorial = false;
+                    
                     specialAbility = false;
                     myToggle = true;
                     //Debug.Log("testing special ability");
@@ -182,6 +174,14 @@ namespace Nokobot.Assets.Crossbow
             myToggle = false;
             myScoreScript.progressScore = 0f;
             myScoreScript.pointsAdded = 0;
+        }
+
+        private IEnumerator StartSpawningEnemies()
+        {
+            yield return new WaitForSeconds(4);
+            tutorialBoard.SendMessage("StartSpawningEnemies");
+            tutorial2.SetActive(true);
+
         }
     }
 

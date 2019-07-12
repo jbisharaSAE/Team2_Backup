@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.58613557, g: 0.6226675, b: 1.094026, a: 1}
+  m_IndirectSpecularColor: {r: 0.5864336, g: 0.62272227, b: 1.0940166, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -39199,6 +39199,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: EGO HoldingScoreBoard
       objectReference: {fileID: 0}
+    - target: {fileID: 6735405948465053425, guid: 4026cf9168f4e904bbbbd9c9bbb92a8e,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6735405948465053425, guid: 4026cf9168f4e904bbbbd9c9bbb92a8e,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5530995701696968154, guid: 4026cf9168f4e904bbbbd9c9bbb92a8e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -39309,15 +39319,5 @@ PrefabInstance:
       propertyPath: myTarget
       value: 
       objectReference: {fileID: 1830502638}
-    - target: {fileID: 6735405948465053425, guid: 4026cf9168f4e904bbbbd9c9bbb92a8e,
-        type: 3}
-      propertyPath: m_havePropertiesChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6735405948465053425, guid: 4026cf9168f4e904bbbbd9c9bbb92a8e,
-        type: 3}
-      propertyPath: m_isInputParsingRequired
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4026cf9168f4e904bbbbd9c9bbb92a8e, type: 3}

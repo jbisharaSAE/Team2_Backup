@@ -15,7 +15,7 @@ public class SpawnEnemyManager : MonoBehaviour
 
     private int index = 0;
     private bool isMoving;
-    private bool goingUp;
+    //private bool goingUp;
 
     private int moveCounter = 0;
 
@@ -38,28 +38,74 @@ public class SpawnEnemyManager : MonoBehaviour
     }
 
     //simple coroutine that switches between fighting areas, and begins the process of moving the player position
-    public IEnumerator ChangeLevel(int i)
+    public IEnumerator ChangeLevel(int i, bool goingUp)
     {
-        if(i >= 2 || moveCounter > 0)
+        spawnEnemyObj[i].isSpawning = false;
+        spawnEnemyObj[i].enemyCounter = 0;
+
+        //yield return new WaitForSeconds(0.5f);
+        
+
+        if (goingUp)
         {
-            goingUp = false;
-            index = i - 1;
-        }
-        else if (moveCounter == 0)
-        {
-            goingUp = true;
             index = i + 1;
+            spawnEnemyObj[i + 1].enemyCountTotal += difficultyCounter;
+            spawnEnemyObj[i + 1].isSpawning = true;
+            spawnEnemyObj[i + 1].runOnce = false;
+            spawnEnemyObj[i + 1].goingUp = true;
+            powerUpmanager.transform.position = new Vector3(enemyPathAreas[i + 1].transform.position.x, enemyPathAreas[i + 1].transform.position.y - 10f, enemyPathAreas[i + 1].transform.position.z);
+        }
+        else
+        {
+            index = i - 1;
+            spawnEnemyObj[i - 1].enemyCountTotal += difficultyCounter;
+            spawnEnemyObj[i - 1].isSpawning = true;
+            spawnEnemyObj[i - 1].runOnce = false;
+            spawnEnemyObj[i - 1].goingUp = true;
+            powerUpmanager.transform.position = new Vector3(enemyPathAreas[i - 1].transform.position.x, enemyPathAreas[i - 1].transform.position.y - 10f, enemyPathAreas[i - 1].transform.position.z);
         }
 
-        spawnEnemyObj[i].isSpawning = false;
-        spawnEnemyObj[i].runOnce = false;
-        spawnEnemyObj[i].enemyCounter = 0;
+        if(i == 2)
+        {
+            spawnEnemyObj[i - 1].goingUp = false;
+        }
+        else if (i == 0)
+        {
+            spawnEnemyObj[i + 1].goingUp = true;
+        }
+
+
+
+
+
+
+
+
+
+        //if(i >= 2 || moveCounter > 1)
+        //{
+        //    goingUp = false;
+        //    index = i - 1;
+        //    spawnEnemyObj[i-1].runOnce = false;
+        //    spawnEnemyObj[i-1].enemyCounter = 0;
+        //}
+        //else if (moveCounter == 0)
+        //{
+        //    goingUp = true;
+        //    index = i + 1;
+        //    spawnEnemyObj[i+1].runOnce = false;
+        //    spawnEnemyObj[i+1].enemyCounter = 0;
+        //}
+
+        
+        //spawnEnemyObj[i].runOnce = false;
+        
 
         // moves the spawning area for power up ballons to the next area wave of enemies
         
 
-        yield return new WaitForSeconds(8f);
-        myWaypointSystem.SendMessage("ChangePlayerPosition");
+        yield return new WaitForSeconds(1f); // normal time is 8
+        myWaypointSystem.SendMessage("ChangePlayerPosition", index);
         
         // this allows the scoreboard to move
         isMoving = true;
@@ -67,33 +113,31 @@ public class SpawnEnemyManager : MonoBehaviour
         // increases difficulty every wave, by increasing the total number of enemies
         difficultyCounter += 5;
 
-        yield return new WaitForSeconds(2f);
-        if (goingUp)
-        {
-            spawnEnemyObj[i + 1].enemyCountTotal += difficultyCounter;
-            spawnEnemyObj[i + 1].isSpawning = true;
-            powerUpmanager.transform.position = new Vector3(enemyPathAreas[i + 1].transform.position.x, enemyPathAreas[i + 1].transform.position.y - 10f, enemyPathAreas[i + 1].transform.position.z);
-        }
-        else
-        {
-            ++moveCounter;
-            if(moveCounter <= 2)
-            {
-                Debug.Log("Testing Negative Route");
-                spawnEnemyObj[i - 1].enemyCountTotal += difficultyCounter;
-                spawnEnemyObj[i - 1].isSpawning = true;
-                powerUpmanager.transform.position = new Vector3(enemyPathAreas[i - 1].transform.position.x, enemyPathAreas[i - 1].transform.position.y - 10f, enemyPathAreas[i - 1].transform.position.z);
-            }
-            else
-            {
-
-                spawnEnemyObj[i + 1].enemyCountTotal += difficultyCounter;
-                spawnEnemyObj[i + 1].isSpawning = true;
-                powerUpmanager.transform.position = new Vector3(enemyPathAreas[i + 1].transform.position.x, enemyPathAreas[i + 1].transform.position.y - 10f, enemyPathAreas[i + 1].transform.position.z);
-                moveCounter = 0;
-            }
+        //yield return new WaitForSeconds(1f); // normal time is 2
+        //if (goingUp)
+        //{
             
-        }
+        //}
+        //else
+        //{
+        //    ++moveCounter;
+        //    if(moveCounter <= 2)
+        //    {
+        //        Debug.Log("Testing Negative Route");
+        //        spawnEnemyObj[i - 1].enemyCountTotal += difficultyCounter;
+        //        spawnEnemyObj[i - 1].isSpawning = true;
+        //        powerUpmanager.transform.position = new Vector3(enemyPathAreas[i - 1].transform.position.x, enemyPathAreas[i - 1].transform.position.y - 10f, enemyPathAreas[i - 1].transform.position.z);
+        //    }
+        //    else
+        //    {
+
+        //        spawnEnemyObj[i + 1].enemyCountTotal += difficultyCounter;
+        //        spawnEnemyObj[i + 1].isSpawning = true;
+        //        powerUpmanager.transform.position = new Vector3(enemyPathAreas[i + 1].transform.position.x, enemyPathAreas[i + 1].transform.position.y - 10f, enemyPathAreas[i + 1].transform.position.z);
+        //        moveCounter = 0;
+        //    }
+            
+        //}
 
         Debug.Log(goingUp);
         Debug.Log(moveCounter);

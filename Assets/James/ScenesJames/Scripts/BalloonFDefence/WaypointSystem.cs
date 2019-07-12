@@ -65,14 +65,14 @@ public class WaypointSystem : MonoBehaviour
         
     }
 
-    public void ChangePlayerPosition()
+    public void ChangePlayerPosition(int index)
 
     {
-
+        destIndex = index;
         isMoving = true;
         // changes destination index to start moving the player to the next waypoint
-        destIndex += 1;
-        destIndex %= waypoints.Length;
+        //destIndex += 1;
+        //destIndex %= waypoints.Length;
         //Debug.Log("TestingMethodCall");
     }
 }

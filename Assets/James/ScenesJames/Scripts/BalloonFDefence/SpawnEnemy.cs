@@ -30,6 +30,8 @@ public class SpawnEnemy : MonoBehaviour
     [Tooltip("Target tag: MyTarget1 .. 4")]
     public string targetTag;
 
+    public bool goingUp = false;
+
     void Update()
     {
         currentSpawnTime += Time.deltaTime;
@@ -56,8 +58,18 @@ public class SpawnEnemy : MonoBehaviour
             }
             else if (!runOnce)
             {
+                if(spawnIndex == 2)
+                {
+                    goingUp = false;
+                }
+                else if (spawnIndex == 0)
+                {
+                    goingUp = true;
+                }
+                
+                Debug.Log("testing call function to move scoreboard");
                 // changing level (which side of the castle the player is defending from)
-                myManagerScript.StartCoroutine(myManagerScript.ChangeLevel(spawnIndex));
+                myManagerScript.StartCoroutine(myManagerScript.ChangeLevel(spawnIndex, goingUp));
                 runOnce = true;
             }
         }
