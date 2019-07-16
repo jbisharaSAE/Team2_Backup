@@ -11,6 +11,7 @@ public class WindmillMovee : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+        //rotation code so windmill blades can spin 
     {
         transform.Rotate(new Vector3(Time.deltaTime* 0,1 , 0));
     }
