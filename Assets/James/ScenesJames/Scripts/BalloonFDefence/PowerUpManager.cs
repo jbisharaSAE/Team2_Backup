@@ -8,7 +8,7 @@ using Nokobot.Assets.Crossbow;
 public class PowerUpManager : MonoBehaviour
 {
     public OVRCrossbowShoot crossBowScript;
-    public PCCrossBowShoot pcCrossBowshootScript;
+    //public PCCrossBowShoot pcCrossBowshootScript;
     public CastleManager castleHealthScript;
     public GameObject myPowerUpBalloon;
 
@@ -29,13 +29,13 @@ public class PowerUpManager : MonoBehaviour
 
         if (rapidFireTimer > 0f)
         {
-            pcCrossBowshootScript.shootGap = 0f;
+            //pcCrossBowshootScript.shootGap = 0f;
             crossBowScript.shootGap = 0f;
             rapidFireTimer -= Time.deltaTime;
         }
         else
         {
-            pcCrossBowshootScript.shootGap = 0.4f;
+            //pcCrossBowshootScript.shootGap = 0.4f;
             crossBowScript.shootGap = 0.4f;
         }
 
