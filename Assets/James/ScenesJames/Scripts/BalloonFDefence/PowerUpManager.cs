@@ -8,6 +8,7 @@ using Nokobot.Assets.Crossbow;
 public class PowerUpManager : MonoBehaviour
 {
     public OVRCrossbowShoot crossBowScript;
+    public PCCrossBowShoot pcCrossBowshootScript;
     public CastleManager castleHealthScript;
     public GameObject myPowerUpBalloon;
 
@@ -28,11 +29,13 @@ public class PowerUpManager : MonoBehaviour
 
         if (rapidFireTimer > 0f)
         {
+            pcCrossBowshootScript.shootGap = 0f;
             crossBowScript.shootGap = 0f;
             rapidFireTimer -= Time.deltaTime;
         }
         else
         {
+            pcCrossBowshootScript.shootGap = 0.4f;
             crossBowScript.shootGap = 0.4f;
         }
 
@@ -42,7 +45,9 @@ public class PowerUpManager : MonoBehaviour
 
     public void PurplePowerUpHit()
     {
-        slowTimeTimer = 3f;
+        rapidFireTimer = 3f;
+
+        print("testing purple");
 
     }
 
@@ -50,7 +55,9 @@ public class PowerUpManager : MonoBehaviour
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
-        foreach(GameObject enemy in enemies)
+        print("testing orange");
+
+        foreach (GameObject enemy in enemies)
         {
             enemy.GetComponent<EnemyScript>().StartCoroutine(enemy.GetComponent<EnemyScript>().SlowDownEnemy());
                 //StartCoroutine(enemy.SlowDownEnemy());
@@ -60,6 +67,7 @@ public class PowerUpManager : MonoBehaviour
     public void GreenPowerUpHit()
     {
         castleHealthScript.SendMessage("CastleHeal");
+        print("testing green");
     }
 
 

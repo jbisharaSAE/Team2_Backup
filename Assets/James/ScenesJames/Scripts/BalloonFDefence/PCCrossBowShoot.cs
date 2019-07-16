@@ -11,7 +11,7 @@ namespace Nokobot.Assets.Crossbow
 
 
 
-        private float shootGap = 0.4f;
+        public float shootGap = 0.4f;
         private float timer;
 
         public float shotPower = 100f;

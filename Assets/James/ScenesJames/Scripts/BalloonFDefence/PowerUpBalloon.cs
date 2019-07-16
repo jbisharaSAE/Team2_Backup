@@ -17,7 +17,7 @@ public class PowerUpBalloon : MonoBehaviour
     {
         powerUpManagerScript = GameObject.Find("EGO Spawning PowerUP Balloons").GetComponent<PowerUpManager>();
         rb = gameObject.GetComponent<Rigidbody>();
-        speed = Random.Range(60f, 80f);
+        speed = Random.Range(15f, 25f);
     }
     
     void Start()
@@ -40,7 +40,7 @@ public class PowerUpBalloon : MonoBehaviour
 
     private void Update()
     {
-        rb.velocity = Vector3.up * speed * Time.deltaTime;
+        rb.velocity = Vector3.up * speed;
     }
 
     public void ExplodePowerUpBalloon()
