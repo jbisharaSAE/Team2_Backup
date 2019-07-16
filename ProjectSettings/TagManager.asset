@@ -15,6 +15,7 @@ TagManager:
   - MyTarget2
   - MyTarget3
   - MyTarget4
+  - Powerup
   layers:
   - Default
   - TransparentFX

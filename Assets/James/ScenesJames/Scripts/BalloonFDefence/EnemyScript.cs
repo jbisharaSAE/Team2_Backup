@@ -15,7 +15,7 @@ public class EnemyScript : MonoBehaviour
     {
         enemy = gameObject.GetComponent<NavMeshAgent>();
 
-        randomMySpeed = Random.Range(10f, 50f);
+        randomMySpeed = Random.Range(10f, 35f);
         // finds the target in scene
         target = GameObject.FindGameObjectWithTag(enemysTarget);
         enemy.speed = randomMySpeed;
@@ -39,9 +39,10 @@ public class EnemyScript : MonoBehaviour
     
     public IEnumerator SlowDownEnemy()
     {
-        randomMySpeed *= 0.5f;
+        print("testing coroutine");
+        enemy.speed *= 0.5f;
         yield return new WaitForSeconds(3);
-        randomMySpeed *= 2f;
+        enemy.speed *= 2f;
 
     }
     
