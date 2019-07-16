@@ -32635,6 +32635,16 @@ PrefabInstance:
       propertyPath: shotPower
       value: 15000
       objectReference: {fileID: 0}
+    - target: {fileID: 2321262954475777610, guid: 14d6513c7ac0ea943ac7525a4cf29ee6,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2321262954466851050, guid: 14d6513c7ac0ea943ac7525a4cf29ee6,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14d6513c7ac0ea943ac7525a4cf29ee6, type: 3}
 --- !u!114 &1830502637 stripped
