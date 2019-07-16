@@ -124,6 +124,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Explosion Burst
       objectReference: {fileID: 0}
+    - target: {fileID: 4033321828601655088, guid: 30c433ecc40af59469371e485a648a24,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4033321828601655091, guid: 30c433ecc40af59469371e485a648a24,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -184,7 +189,57 @@ PrefabInstance:
       propertyPath: lengthInSec
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4033321827644246269, guid: 30c433ecc40af59469371e485a648a24,
+        type: 3}
+      propertyPath: TrailModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4033321827644246268, guid: 30c433ecc40af59469371e485a648a24,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4033321828601655090, guid: 30c433ecc40af59469371e485a648a24,
+        type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4033321828601655090, guid: 30c433ecc40af59469371e485a648a24,
+        type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4033321828601655090, guid: 30c433ecc40af59469371e485a648a24,
+        type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4033321828601655090, guid: 30c433ecc40af59469371e485a648a24,
+        type: 3}
+      propertyPath: InitialModule.gravityModifier.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4033321828601655090, guid: 30c433ecc40af59469371e485a648a24,
+        type: 3}
+      propertyPath: TrailModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4033321828168125641, guid: 30c433ecc40af59469371e485a648a24,
+        type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4033321828168125640, guid: 30c433ecc40af59469371e485a648a24,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4033321828404996250, guid: 30c433ecc40af59469371e485a648a24,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4033321828739150646, guid: 30c433ecc40af59469371e485a648a24,
         type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -336,7 +391,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1283978666}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 16.398733, y: 60.750908, z: -1053.9077}
+  m_LocalPosition: {x: 24.996048, y: 50.483074, z: -754.1502}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
