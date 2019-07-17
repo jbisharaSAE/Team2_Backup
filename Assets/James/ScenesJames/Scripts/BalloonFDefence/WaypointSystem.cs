@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WaypointSystem : MonoBehaviour
 {
     public GameObject player;
     public GameObject[] waypoints;
     public float speed;
+    public Image blackFadeImage;
 
     private int currentIndex = 0;
     private int destIndex = 0;
@@ -52,6 +54,11 @@ public class WaypointSystem : MonoBehaviour
 
         if (isMoving)
         {
+            Color tempColour;
+            //tempColour.a += 0.1f;
+
+            //blackFadeImage.color.a += 0.1f;
+
             player.transform.position = Vector3.MoveTowards(player.transform.position, waypoints[destIndex].transform.position, speed * Time.deltaTime);
 
             float getDistance = Vector3.Distance(player.transform.position, waypoints[destIndex].transform.position);
@@ -65,11 +72,13 @@ public class WaypointSystem : MonoBehaviour
         
     }
 
-    public void ChangePlayerPosition(int index)
+    public IEnumerator ChangePlayerPosition(int index)
 
     {
-        destIndex = index;
         isMoving = true;
+        yield return new WaitForSeconds(1);
+        destIndex = index;
+        
         // changes destination index to start moving the player to the next waypoint
         //destIndex += 1;
         //destIndex %= waypoints.Length;
