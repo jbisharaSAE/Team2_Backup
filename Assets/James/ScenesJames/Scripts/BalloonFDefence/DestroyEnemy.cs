@@ -8,6 +8,7 @@ public class DestroyEnemy : MonoBehaviour
 
     public AudioClip gateAttackSFX;
     private AudioSource gateAttackSource;
+    public float damageCastleAmount = 5f;
 
     private void Start()
     {
@@ -21,7 +22,7 @@ public class DestroyEnemy : MonoBehaviour
         if (other.gameObject.tag == "Balloon")
         {
             gateAttackSource.Play();
-            castleManagerScript.SendMessage("CastleHit", 10f);
+            castleManagerScript.SendMessage("CastleHit", damageCastleAmount);
             print("testing Collision");
             Destroy(other.transform.parent.gameObject);
         }
