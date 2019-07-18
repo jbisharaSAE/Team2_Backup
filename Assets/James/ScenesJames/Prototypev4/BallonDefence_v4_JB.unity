@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.5864336, g: 0.62272227, b: 1.0940166, a: 1}
+  m_IndirectSpecularColor: {r: 0.58613557, g: 0.6226675, b: 1.094026, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -18776,6 +18776,16 @@ PrefabInstance:
       propertyPath: speed
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 5549522041517745085, guid: d6b8ade195d52084ab5e6fe1cafd9d69,
+        type: 3}
+      propertyPath: crossBow
+      value: 
+      objectReference: {fileID: 1830502641}
+    - target: {fileID: 5549522041517745085, guid: d6b8ade195d52084ab5e6fe1cafd9d69,
+        type: 3}
+      propertyPath: blackFadeImage
+      value: 
+      objectReference: {fileID: 1830502642}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6b8ade195d52084ab5e6fe1cafd9d69, type: 3}
 --- !u!114 &1104450656 stripped
@@ -32786,7 +32796,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1830502636}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1830502641}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c02240f5ddf427a4384309ae5d5b1834, type: 3}
@@ -32813,6 +32823,24 @@ MonoBehaviour:
 --- !u!114 &1830502640 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5703282699671281893, guid: 14d6513c7ac0ea943ac7525a4cf29ee6,
+    type: 3}
+  m_PrefabInstance: {fileID: 1830502636}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1830502641 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1680615611227585485, guid: 14d6513c7ac0ea943ac7525a4cf29ee6,
+    type: 3}
+  m_PrefabInstance: {fileID: 1830502636}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1830502642 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8744218520608148655, guid: 14d6513c7ac0ea943ac7525a4cf29ee6,
     type: 3}
   m_PrefabInstance: {fileID: 1830502636}
   m_PrefabAsset: {fileID: 0}

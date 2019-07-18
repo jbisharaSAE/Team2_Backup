@@ -58,6 +58,7 @@ public class SpawnEnemy : MonoBehaviour
             }
             else if (!runOnce)
             {
+                // determines which direction for the board to move
                 if(spawnIndex == 2)
                 {
                     goingUp = false;
@@ -67,7 +68,7 @@ public class SpawnEnemy : MonoBehaviour
                     goingUp = true;
                 }
                 
-                Debug.Log("testing call function to move scoreboard");
+                
                 // changing level (which side of the castle the player is defending from)
                 myManagerScript.StartCoroutine(myManagerScript.ChangeLevel(spawnIndex, goingUp));
                 runOnce = true;

@@ -6,8 +6,8 @@ public class SpawnEnemyManager : MonoBehaviour
 {
     public SpawnEnemy []spawnEnemyObj;
     public WaypointSystem myWaypointSystem;
-    public Transform []scoreSpawnPoints;
-    public GameObject myScoreBoard;
+    public Transform []healthBoardSpawnPoints;
+    public GameObject castleHealthBoard;
     public float speed;
     public GameObject powerUpmanager;
     public GameObject[] enemyPathAreas;
@@ -15,7 +15,7 @@ public class SpawnEnemyManager : MonoBehaviour
 
     private int index = 0;
     private bool isMoving;
-    //private bool goingUp;
+    
 
     private int moveCounter = 0;
 
@@ -23,15 +23,14 @@ public class SpawnEnemyManager : MonoBehaviour
     {
         if (isMoving)
         {
-            //Debug.Log("Testing Boolean");
-            myScoreBoard.transform.position = Vector3.MoveTowards(myScoreBoard.transform.position, scoreSpawnPoints[index].transform.position, speed * Time.deltaTime);
+            // moves the castle health UI display behind each wave, everytime the next wave comes
+            castleHealthBoard.transform.position = Vector3.MoveTowards(castleHealthBoard.transform.position, healthBoardSpawnPoints[index].transform.position, speed * Time.deltaTime);
 
-            float dist = Vector3.Distance(myScoreBoard.transform.position, scoreSpawnPoints[index].transform.position);
+            float dist = Vector3.Distance(castleHealthBoard.transform.position, healthBoardSpawnPoints[index].transform.position);
 
             if (dist < 0.1f)
             {
-                //++index;
-                //index %= scoreSpawnPoints.Length;
+                
                 isMoving = false;
             }
         }
@@ -45,7 +44,7 @@ public class SpawnEnemyManager : MonoBehaviour
 
         
         
-
+        // determines which direction the scoreboard needs to go
         if (goingUp)
         {
             index = i + 1;
@@ -69,6 +68,7 @@ public class SpawnEnemyManager : MonoBehaviour
             powerUpmanager.transform.position = new Vector3(enemyPathAreas[i - 1].transform.position.x, enemyPathAreas[i - 1].transform.position.y - 10f, enemyPathAreas[i - 1].transform.position.z);
         }
 
+        // this ensures when the board is in the middle that the board moves in the correct direction
         if(i == 2)
         {
             spawnEnemyObj[i - 1].goingUp = false;
@@ -86,7 +86,7 @@ public class SpawnEnemyManager : MonoBehaviour
         yield return new WaitForSeconds(1f); // normal time is 8
         myWaypointSystem.SendMessage("ChangePlayerPosition", index);
         
-        // this allows the scoreboard to move
+        // this allows the health bar board to move
         isMoving = true;
 
         // increases difficulty every wave, by increasing the total number of enemies
