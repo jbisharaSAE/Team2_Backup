@@ -508,7 +508,7 @@ PrefabInstance:
         type: 3}
       propertyPath: spawnPoints.Array.data[1]
       value: 
-      objectReference: {fileID: 1681298310}
+      objectReference: {fileID: 1484326748}
     - target: {fileID: 420439405945181884, guid: 714a1119725153949b0e983e4f276bd0,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -1074,7 +1074,7 @@ PrefabInstance:
     - target: {fileID: 420439405945181882, guid: 714a1119725153949b0e983e4f276bd0,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 40.11
+      value: 22.79
       objectReference: {fileID: 0}
     - target: {fileID: 420439405945181882, guid: 714a1119725153949b0e983e4f276bd0,
         type: 3}
@@ -2369,7 +2369,7 @@ PrefabInstance:
     - target: {fileID: 420439405945181882, guid: 714a1119725153949b0e983e4f276bd0,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 36.79
+      value: 20.81
       objectReference: {fileID: 0}
     - target: {fileID: 420439405945181882, guid: 714a1119725153949b0e983e4f276bd0,
         type: 3}
@@ -2604,13 +2604,13 @@ Transform:
   - {fileID: 402496206}
   - {fileID: 779706470}
   - {fileID: 637866419}
+  - {fileID: 678101763}
   - {fileID: 334163616}
   - {fileID: 2023308077}
   - {fileID: 1798180069}
-  - {fileID: 41944713}
-  - {fileID: 678101763}
-  - {fileID: 1731576567}
   - {fileID: 2051345417}
+  - {fileID: 41944713}
+  - {fileID: 1731576567}
   m_Father: {fileID: 0}
   m_RootOrder: 35
   m_LocalEulerAnglesHint: {x: 0, y: 206.012, z: 0}
@@ -3989,7 +3989,7 @@ PrefabInstance:
     - target: {fileID: 420439405945181882, guid: 714a1119725153949b0e983e4f276bd0,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 36.79
+      value: 20.97
       objectReference: {fileID: 0}
     - target: {fileID: 420439405945181882, guid: 714a1119725153949b0e983e4f276bd0,
         type: 3}
@@ -4090,7 +4090,7 @@ PrefabInstance:
         type: 3}
       propertyPath: spawnPoints.Array.data[1]
       value: 
-      objectReference: {fileID: 1681298310}
+      objectReference: {fileID: 1192016826}
     - target: {fileID: 420439405945181884, guid: 714a1119725153949b0e983e4f276bd0,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -5069,7 +5069,7 @@ PrefabInstance:
     - target: {fileID: 420439405945181882, guid: 714a1119725153949b0e983e4f276bd0,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -133.54
+      value: -138.07
       objectReference: {fileID: 0}
     - target: {fileID: 420439405945181882, guid: 714a1119725153949b0e983e4f276bd0,
         type: 3}
@@ -5079,7 +5079,7 @@ PrefabInstance:
     - target: {fileID: 420439405945181882, guid: 714a1119725153949b0e983e4f276bd0,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 297.5
+      value: 296.62
       objectReference: {fileID: 0}
     - target: {fileID: 420439405945181882, guid: 714a1119725153949b0e983e4f276bd0,
         type: 3}
@@ -6828,11 +6828,11 @@ Transform:
   - {fileID: 1851112744}
   - {fileID: 976361671}
   - {fileID: 1571789371}
-  - {fileID: 240251605}
   - {fileID: 1029459524}
+  - {fileID: 240251605}
   - {fileID: 902966752}
-  - {fileID: 1124731436}
   - {fileID: 1125365271}
+  - {fileID: 1124731436}
   - {fileID: 1147889878}
   - {fileID: 1491642113}
   - {fileID: 482204731}
@@ -7522,17 +7522,17 @@ PrefabInstance:
     - target: {fileID: 420439405945181882, guid: 714a1119725153949b0e983e4f276bd0,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -401.98
+      value: -402.69
       objectReference: {fileID: 0}
     - target: {fileID: 420439405945181882, guid: 714a1119725153949b0e983e4f276bd0,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 39.7
+      value: 29.78
       objectReference: {fileID: 0}
     - target: {fileID: 420439405945181882, guid: 714a1119725153949b0e983e4f276bd0,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 291.08
+      value: 293.81
       objectReference: {fileID: 0}
     - target: {fileID: 420439405945181882, guid: 714a1119725153949b0e983e4f276bd0,
         type: 3}
