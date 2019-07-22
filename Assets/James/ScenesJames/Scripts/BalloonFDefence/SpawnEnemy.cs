@@ -8,6 +8,7 @@ public class SpawnEnemy : MonoBehaviour
     public bool isSpawning;
     public SpawnEnemyManager myManagerScript;
 
+    public GameObject[] spawnPoints;
     public bool runOnce;
 
     [Tooltip("Spawn index of this spawn enemy object (level 1 .. 4) ")]
@@ -81,8 +82,10 @@ public class SpawnEnemy : MonoBehaviour
 
     private void Spawn()
     {
+        int randomInt = Random.Range(0, 2);
+
         ++enemyCounter;
-        GameObject myEnemy = Instantiate(enemy, transform.position, Quaternion.identity);
+        GameObject myEnemy = Instantiate(enemy, spawnPoints[randomInt].transform.position, Quaternion.identity);
         myEnemy.GetComponent<EnemyScript>().enemysTarget = targetTag;
     }
  
