@@ -73,6 +73,8 @@ public class SpawnEnemy : MonoBehaviour
                 // changing level (which side of the castle the player is defending from)
                 myManagerScript.StartCoroutine(myManagerScript.ChangeLevel(spawnIndex, goingUp));
                 runOnce = true;
+                isSpawning = false;
+                enemyCounter = 0;
             }
         }
         

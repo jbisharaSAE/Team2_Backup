@@ -42,8 +42,11 @@ public class SpawnEnemyManager : MonoBehaviour
         spawnEnemyObj[i].isSpawning = false;
         spawnEnemyObj[i].enemyCounter = 0;
 
-        
-        
+        yield return new WaitForSeconds(3f);
+
+        // this allows the health bar board to move
+        isMoving = true;
+
         // determines which direction the scoreboard needs to go
         if (goingUp)
         {
@@ -83,14 +86,14 @@ public class SpawnEnemyManager : MonoBehaviour
 
         
 
-        yield return new WaitForSeconds(1f); // normal time is 8
+        yield return new WaitForSeconds(3f); // normal time is 8
         myWaypointSystem.SendMessage("ChangePlayerPosition", index);
         
-        // this allows the health bar board to move
-        isMoving = true;
+
 
         // increases difficulty every wave, by increasing the total number of enemies
         difficultyCounter += 5;
+        yield return null;
 
         
 

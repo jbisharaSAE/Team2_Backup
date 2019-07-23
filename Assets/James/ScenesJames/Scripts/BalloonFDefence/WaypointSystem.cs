@@ -48,7 +48,7 @@ public class WaypointSystem : MonoBehaviour
 
         player.transform.position = waypoints[destIndex].transform.position;
 
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.5f);
 
         while(myColour.a >= 0)
         {
@@ -57,7 +57,7 @@ public class WaypointSystem : MonoBehaviour
             yield return null;
         }
 
-        crossBow.SetActive(false);
+        crossBow.SetActive(true);
         yield return null;
     }
 }

@@ -40,7 +40,7 @@ public class CastleManager : MonoBehaviour
 
     public void CastleHeal()
     {
-        currentCastleHealth += 10f;
+        currentCastleHealth += 20f;
     }
 
     private void EndGame()
