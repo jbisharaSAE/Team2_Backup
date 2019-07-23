@@ -9,6 +9,7 @@ public class DestroyEnemy : MonoBehaviour
     public AudioClip gateAttackSFX;
     private AudioSource gateAttackSource;
     public float damageCastleAmount = 5f;
+    public GameObject explosion;
 
     private void Start()
     {
@@ -24,8 +25,16 @@ public class DestroyEnemy : MonoBehaviour
             gateAttackSource.Play();
             castleManagerScript.SendMessage("CastleHit", damageCastleAmount);
             print("testing Collision");
+            StartCoroutine(StartExplosion());
             Destroy(other.transform.parent.gameObject);
         }
+    }
+
+    private IEnumerator StartExplosion()
+    {
+        explosion.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        explosion.SetActive(false);
     }
 
 }
