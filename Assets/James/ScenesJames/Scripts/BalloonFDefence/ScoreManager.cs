@@ -15,14 +15,14 @@ public class ScoreManager : MonoBehaviour
     public float progressScore;
     public int playerScoreDisplay;
     
-    public TextMeshProUGUI scoreDisplayText;
+    
     public Image progressBar;
 
     // Update is called once per frame
     void Update()
     {
         
-        scoreDisplayText.text = playerScoreDisplay.ToString();
+        //scoreDisplayText.text = playerScoreDisplay.ToString();
 
         progressRatio = progressScore / 100f;
 

@@ -9,9 +9,9 @@ namespace Nokobot.Assets.Crossbow
     {
         public GameObject arrowPrefab;
         public Transform arrowLocation;
-        //public GameObject myCircle;
+        
         public ScoreManager myScoreScript;
-        //public Text testingTextButton;
+        
         public Transform[] arrowLocations;
         public ShootingTutorial tutorialBoard;
         public GameObject tutorial1;
@@ -27,12 +27,6 @@ namespace Nokobot.Assets.Crossbow
         public float shootGap = 0.4f;
         
         public float shotPower = 100f;
-
-        public AudioClip arrowShoot;
-        public AudioClip arrowReload;
-
-
-        private AudioSource shootAudioSource;
 
         public Transform rightHandAnchor;
 
@@ -54,14 +48,12 @@ namespace Nokobot.Assets.Crossbow
             {
                 if (timer >= shootGap)
                 {
-                    //shootAudioSource.clip = arrowShoot;
-                    //shootAudioSource.Play();
+                    
                     timer = 0f;
 
                     Instantiate(arrowPrefab, arrowLocation.position, arrowLocation.rotation).GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * shotPower);
 
-                    //shootAudioSource.clip = arrowReload;
-                    //shootAudioSource.Play();
+
                 }
 
                 // to flick to the next tutorial slide, once player has  shot an arrow
@@ -76,34 +68,6 @@ namespace Nokobot.Assets.Crossbow
             }
 
 
-
-
-            //Ray ray;
-
-            //RaycastHit hit;
-
-            //returns true if ray cast hits wall
-            //if (Physics.Raycast(rightHandAnchor.position, rightHandAnchor.forward, out hit, Mathf.Infinity))
-            //{
-            //    if (hit.collider.tag == "Ground")
-            //    {
-            //        if (myScoreScript.progressRatio >= 100f)
-            //        {
-            //            specialAbility = true;
-
-            //            if (indexTrigger != 0.0f)
-            //            {
-
-            //                rainArrowsScript.SendMessage("SpawnArrows");
-
-
-            //            }
-            //        }
-
-
-            //    }
-
-            //}
           
 
             if (myScoreScript.progressScore >= 100f)
@@ -178,7 +142,7 @@ namespace Nokobot.Assets.Crossbow
 
         private IEnumerator StartSpawningEnemies()
         {
-            yield return new WaitForSeconds(4);
+            yield return new WaitForSeconds(4f);
             tutorialBoard.SendMessage("StartSpawningEnemies");
             tutorial2.SetActive(true);
 

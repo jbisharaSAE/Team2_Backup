@@ -6,10 +6,16 @@ public class ShootingTutorial : MonoBehaviour
 {
     public SpawnEnemy firstEnemySpawn;
     public GameObject scoreBoard;
+    public AudioSource audioStart;
 
+    private void Start()
+    {
+        audioStart = gameObject.GetComponent<AudioSource>();
+    }
     public void StartSpawningEnemies()
     {
         //scoreBoard.SetActive(true);
+        audioStart.Play();
         firstEnemySpawn.isSpawning = true;
         Destroy(gameObject);
     }

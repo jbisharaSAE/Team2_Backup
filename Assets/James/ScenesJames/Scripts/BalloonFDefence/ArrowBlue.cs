@@ -5,7 +5,18 @@ using UnityEngine;
 public class ArrowBlue : MonoBehaviour
 {
     public Rigidbody rb;
+    public AudioClip arrowShoot;
+    public AudioClip arrowReload;
+    public AudioClip metalImpact;
+    private AudioSource myAudioSource;
 
+
+    private void Start()
+    {
+        StartCoroutine(ArrowSounds());
+        myAudioSource = gameObject.GetComponent<AudioSource>();
+        Destroy(gameObject, 30f);
+    }
     private void Update()
     {
         transform.rotation = Quaternion.LookRotation(rb.velocity);
@@ -20,7 +31,23 @@ public class ArrowBlue : MonoBehaviour
 
             rb.constraints = RigidbodyConstraints.FreezeAll;
         }
+        else if(collision.gameObject.tag == "Enemy")
+        {
+            myAudioSource.clip = metalImpact;
+            myAudioSource.Play();
+        }
         
 
+    }
+
+    private IEnumerator ArrowSounds()
+    {
+        myAudioSource.clip = arrowShoot;
+        myAudioSource.Play();
+
+        yield return new WaitForSeconds(0.2f);
+
+        myAudioSource.clip = arrowReload;
+        myAudioSource.Play();
     }
 }

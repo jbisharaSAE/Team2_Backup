@@ -45,5 +45,6 @@ public class EnemyScript : MonoBehaviour
         enemy.speed *= 2f;
 
     }
-    
+
+
 }
