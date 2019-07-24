@@ -1,0 +1,172 @@
+fileFormatVersion: 2
+guid: 851e6cb6327d87448bb8c796e3f8149f
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Bridge
+    100002: Door
+    100004: //RootNode
+    100006: Flags
+    100008: Gate
+    100010: Hill
+    100012: Moat
+    100014: Outer Walls
+    100016: Outer Walls2
+    100018: Tower
+    100020: Trees
+    100022: Walls
+    100024: Water
+    100026: Well
+    400000: Bridge
+    400002: Door
+    400004: //RootNode
+    400006: Flags
+    400008: Gate
+    400010: Hill
+    400012: Moat
+    400014: Outer Walls
+    400016: Outer Walls2
+    400018: Tower
+    400020: Trees
+    400022: Walls
+    400024: Water
+    400026: Well
+    2100000: 20 - Default
+    2100002: 21 - Default
+    2100004: 09 - Default
+    2100006: 15 - Default
+    2100008: 14 - Default
+    2100010: 13 - Default
+    2100012: 08 - Default
+    2100014: 01 - Default
+    2100016: 03 - Default
+    2100018: 02 - Default
+    2100020: 07 - Default
+    2100022: 19 - Default
+    2300000: Bridge
+    2300002: Door
+    2300004: Flags
+    2300006: Gate
+    2300008: Hill
+    2300010: Moat
+    2300012: Outer Walls
+    2300014: Outer Walls2
+    2300016: Tower
+    2300018: Trees
+    2300020: Walls
+    2300022: Water
+    2300024: Well
+    3300000: Bridge
+    3300002: Door
+    3300004: Flags
+    3300006: Gate
+    3300008: Hill
+    3300010: Moat
+    3300012: Outer Walls
+    3300014: Outer Walls2
+    3300016: Tower
+    3300018: Trees
+    3300020: Walls
+    3300022: Water
+    3300024: Well
+    4300000: Trees
+    4300002: Bridge
+    4300004: Door
+    4300006: Flags
+    4300008: Gate
+    4300010: Walls
+    4300012: Tower
+    4300014: Outer Walls
+    4300016: Hill
+    4300018: Moat
+    4300020: Water
+    4300022: Well
+    4300024: Outer Walls2
+    7400000: Take 001
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
