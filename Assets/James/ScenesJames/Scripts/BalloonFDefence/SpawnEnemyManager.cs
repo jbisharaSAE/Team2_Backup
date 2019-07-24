@@ -42,7 +42,7 @@ public class SpawnEnemyManager : MonoBehaviour
         spawnEnemyObj[i].isSpawning = false;
         spawnEnemyObj[i].enemyCounter = 0;
 
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(8f);
 
         // this allows the health bar board to move
         isMoving = true;

@@ -112,12 +112,11 @@ MonoBehaviour:
   myColours:
   - {fileID: 2100000, guid: a6621af08332a5241bbd56d413b9526a, type: 2}
   - {fileID: 2100000, guid: d36029a580dcd4f45a532bd9eccbf6ed, type: 2}
-  - {fileID: 2100000, guid: 998cd19dc0160364b857f79f38e1b525, type: 2}
+  - {fileID: 2100000, guid: 02c7607ea3512394daf6e7ef11cfdb41, type: 2}
   fireworks:
-  - {fileID: 4033321828601655088, guid: 896e6ecf117fca642a861683447be3e7, type: 3}
-  - {fileID: 4033321828601655088, guid: 896e6ecf117fca642a861683447be3e7, type: 3}
-  - {fileID: 4033321828601655088, guid: 896e6ecf117fca642a861683447be3e7, type: 3}
-  scoreManagerScript: {fileID: 0}
+  - {fileID: 1398763529610424876, guid: cf02c979a53a87246aa1f7648dfb5441, type: 3}
+  - {fileID: 4485687680527473615, guid: 91698f033ebafe64ca17c0021b98329f, type: 3}
+  - {fileID: 167058, guid: 61bf3bf2690a744498949331dfee7877, type: 3}
   balloonPop: {fileID: 8300000, guid: 4836ad6ccf5578947adcafb2f150f2af, type: 3}
   fireWorkSound: {fileID: 8300000, guid: 594258cfc5b22dd459b2869ee5b57f5f, type: 3}
 --- !u!54 &6756635309294708563
