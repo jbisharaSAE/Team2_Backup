@@ -4,16 +4,12 @@ using UnityEngine;
 
 public class WindmillMovee : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start(){
-        
-    }
-
+    public float speed;
     // Update is called once per frame
     void Update()
         //rotation code so windmill blades can spin 
     {
-        transform.Rotate(new Vector3(Time.deltaTime* 0,1 , 0));
+        transform.Rotate(new Vector3(0, speed * Time.deltaTime , 0));
     }
 }
 
