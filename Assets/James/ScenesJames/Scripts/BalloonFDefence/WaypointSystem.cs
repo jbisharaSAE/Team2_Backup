@@ -17,6 +17,7 @@ public class WaypointSystem : MonoBehaviour
     private int currentIndex = 0;
     private int destIndex = 0;
     private bool isMoving = false;
+    
     //private bool isPositive;
 
     // Start is called before the first frame update
@@ -38,6 +39,7 @@ public class WaypointSystem : MonoBehaviour
 
         crossBow.SetActive(false);
 
+        //fades screen to black
         while (myColour.a <= 1)
         {
             myColour.a += 0.05f;
@@ -47,6 +49,7 @@ public class WaypointSystem : MonoBehaviour
 
         yield return new WaitForSeconds(1);
 
+        //moves player
         player.transform.position = waypoints[destIndex].transform.position;
 
         yield return new WaitForSeconds(0.5f);
