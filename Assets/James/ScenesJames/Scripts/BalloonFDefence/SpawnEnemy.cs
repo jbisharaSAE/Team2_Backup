@@ -88,6 +88,7 @@ public class SpawnEnemy : MonoBehaviour
 
         ++enemyCounter;
         GameObject myEnemy = Instantiate(enemy, spawnPoints[randomInt].transform.position, Quaternion.identity);
+        myEnemy.SetActive(true);
         myEnemy.GetComponent<EnemyScript>().enemysTarget = targetTag;
     }
  
