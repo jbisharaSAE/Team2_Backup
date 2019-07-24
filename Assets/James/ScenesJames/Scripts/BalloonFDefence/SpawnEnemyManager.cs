@@ -15,6 +15,7 @@ public class SpawnEnemyManager : MonoBehaviour
 
     private int index = 0;
     private bool isMoving;
+    private int lvlCounter = 0;
     
 
     private int moveCounter = 0;
@@ -39,63 +40,70 @@ public class SpawnEnemyManager : MonoBehaviour
     //simple coroutine that switches between fighting areas, and begins the process of moving the player position
     public IEnumerator ChangeLevel(int i, bool goingUp)
     {
+        ++lvlCounter;
+
+        // stop spawning enemies, fail safe for code on spawn enemy gameobject
         spawnEnemyObj[i].isSpawning = false;
         spawnEnemyObj[i].enemyCounter = 0;
 
-        yield return new WaitForSeconds(8f);
 
-        // this allows the health bar board to move
-        isMoving = true;
-
-        // determines which direction the scoreboard needs to go
-        if (goingUp)
+        if (lvlCounter < 24)
         {
-            index = i + 1;
-            spawnEnemyObj[i + 1].enemyCountTotal += difficultyCounter;
-            spawnEnemyObj[i + 1].isSpawning = true;
-            spawnEnemyObj[i + 1].runOnce = false;
-            spawnEnemyObj[i + 1].goingUp = true;
 
-            // moves the spawning area for power up ballons to the next area wave of enemies
-            powerUpmanager.transform.position = new Vector3(enemyPathAreas[i + 1].transform.position.x, enemyPathAreas[i + 1].transform.position.y - 10f, enemyPathAreas[i + 1].transform.position.z);
+            yield return new WaitForSeconds(8f);
+
+            // this allows the health bar board to move
+            isMoving = true;
+
+            // determines which direction the scoreboard needs to go
+            if (goingUp)
+            {
+                index = i + 1;
+                spawnEnemyObj[i + 1].enemyCountTotal += difficultyCounter;
+                spawnEnemyObj[i + 1].isSpawning = true;
+                spawnEnemyObj[i + 1].runOnce = false;
+                spawnEnemyObj[i + 1].goingUp = true;
+
+                // moves the spawning area for power up ballons to the next area wave of enemies
+                powerUpmanager.transform.position = new Vector3(enemyPathAreas[i + 1].transform.position.x, enemyPathAreas[i + 1].transform.position.y - 10f, enemyPathAreas[i + 1].transform.position.z);
+            }
+            else
+            {
+                index = i - 1;
+                spawnEnemyObj[i - 1].enemyCountTotal += difficultyCounter;
+                spawnEnemyObj[i - 1].isSpawning = true;
+                spawnEnemyObj[i - 1].runOnce = false;
+                spawnEnemyObj[i - 1].goingUp = true;
+
+                // moves the spawning area for power up ballons to the next area wave of enemies
+                powerUpmanager.transform.position = new Vector3(enemyPathAreas[i - 1].transform.position.x, enemyPathAreas[i - 1].transform.position.y - 10f, enemyPathAreas[i - 1].transform.position.z);
+            }
+
+            // this ensures when the board is in the middle that the board moves in the correct direction
+            if (i == 2)
+            {
+                spawnEnemyObj[i - 1].goingUp = false;
+            }
+            else if (i == 0)
+            {
+                spawnEnemyObj[i + 1].goingUp = true;
+            }
+
+            yield return new WaitForSeconds(3f); // normal time is 8
+            myWaypointSystem.SendMessage("ChangePlayerPosition", index);
+
+            // increases difficulty every wave, by increasing the total number of enemies
+            difficultyCounter += 1;
+            yield return null;
         }
+
         else
         {
-            index = i - 1;
-            spawnEnemyObj[i - 1].enemyCountTotal += difficultyCounter;
-            spawnEnemyObj[i - 1].isSpawning = true;
-            spawnEnemyObj[i - 1].runOnce = false;
-            spawnEnemyObj[i - 1].goingUp = true;
 
-            // moves the spawning area for power up ballons to the next area wave of enemies
-            powerUpmanager.transform.position = new Vector3(enemyPathAreas[i - 1].transform.position.x, enemyPathAreas[i - 1].transform.position.y - 10f, enemyPathAreas[i - 1].transform.position.z);
+            //TODO end game state
         }
 
-        // this ensures when the board is in the middle that the board moves in the correct direction
-        if(i == 2)
-        {
-            spawnEnemyObj[i - 1].goingUp = false;
-        }
-        else if (i == 0)
-        {
-            spawnEnemyObj[i + 1].goingUp = true;
-        }
 
-       
-
-
-        
-
-        yield return new WaitForSeconds(3f); // normal time is 8
-        myWaypointSystem.SendMessage("ChangePlayerPosition", index);
-        
-
-
-        // increases difficulty every wave, by increasing the total number of enemies
-        difficultyCounter += 5;
-        yield return null;
-
-        
 
     }
 }
