@@ -10,8 +10,15 @@ public class PowerUpBalloon : MonoBehaviour
     private int randomNumber;
 
     public Material[] myColours;
+    public GameObject[] powerUpTypes;
     public PowerUpManager powerUpManagerScript;
     private float speed;
+
+    public AudioClip slowTimeAudio;
+    public AudioClip healAudio;
+    public AudioClip rapidFireAudio;
+
+    private AudioSource myAudioSource;
 
     private void Awake()
     {
@@ -30,12 +37,15 @@ public class PowerUpBalloon : MonoBehaviour
         {
             if (i == randomNumber)
             {
-                gameObject.GetComponent<Renderer>().material = myColours[i];
+                powerUpTypes[i].SetActive(true);
+                //gameObject.GetComponent<Renderer>().material = myColours[i];
             }
 
         }
 
         rb = gameObject.GetComponent<Rigidbody>();
+
+        myAudioSource = gameObject.GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -57,16 +67,22 @@ public class PowerUpBalloon : MonoBehaviour
             case 0:
                 powerUpManagerScript.SendMessage("PurplePowerUpHit");
                 Destroy(gameObject);
+                myAudioSource.clip = rapidFireAudio;
+                myAudioSource.Play();
                 break;
             //orange balloon
             case 1:
                 powerUpManagerScript.SendMessage("OrangePowerUpHit");
                 Destroy(gameObject);
+                myAudioSource.clip = slowTimeAudio;
+                myAudioSource.Play();
                 break;
             //green ballon
             case 2:
                 powerUpManagerScript.SendMessage("GreenPowerUpHit");
                 Destroy(gameObject);
+                myAudioSource.clip = healAudio;
+                myAudioSource.Play();
                 break;
         }
 
