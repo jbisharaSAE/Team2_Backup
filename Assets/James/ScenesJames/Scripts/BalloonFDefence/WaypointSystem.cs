@@ -11,6 +11,7 @@ public class WaypointSystem : MonoBehaviour
     public float speed;
     public Image blackFadeImage;
     public GameObject crossBow;
+    public Transform finishingPoint;
 
     private Color myColour;
     private int currentIndex = 0;
@@ -51,6 +52,34 @@ public class WaypointSystem : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
 
         while(myColour.a >= 0)
+        {
+            myColour.a -= 0.5f;
+            blackFadeImage.color = myColour;
+            yield return null;
+        }
+
+        crossBow.SetActive(true);
+        yield return null;
+    }
+
+    public IEnumerator EndGame()
+    {
+        crossBow.SetActive(false);
+
+        while (myColour.a <= 1)
+        {
+            myColour.a += 0.05f;
+            blackFadeImage.color = myColour;
+            yield return null;
+        }
+
+        yield return new WaitForSeconds(1);
+
+        player.transform.position = finishingPoint.position;
+
+        yield return new WaitForSeconds(0.5f);
+
+        while (myColour.a >= 0)
         {
             myColour.a -= 0.5f;
             blackFadeImage.color = myColour;

@@ -112,6 +112,160 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &387676010
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4033321828601655088, guid: 1c90a90e8a657fa41aade391030cc1ad,
+        type: 3}
+      propertyPath: m_Name
+      value: Rocket
+      objectReference: {fileID: 0}
+    - target: {fileID: 4033321828601655091, guid: 1c90a90e8a657fa41aade391030cc1ad,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4033321828601655091, guid: 1c90a90e8a657fa41aade391030cc1ad,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4033321828601655091, guid: 1c90a90e8a657fa41aade391030cc1ad,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4033321828601655091, guid: 1c90a90e8a657fa41aade391030cc1ad,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4033321828601655091, guid: 1c90a90e8a657fa41aade391030cc1ad,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4033321828601655091, guid: 1c90a90e8a657fa41aade391030cc1ad,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4033321828601655091, guid: 1c90a90e8a657fa41aade391030cc1ad,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4033321828601655091, guid: 1c90a90e8a657fa41aade391030cc1ad,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4033321828601655091, guid: 1c90a90e8a657fa41aade391030cc1ad,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4033321828601655091, guid: 1c90a90e8a657fa41aade391030cc1ad,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4033321828601655091, guid: 1c90a90e8a657fa41aade391030cc1ad,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4033321828601655090, guid: 1c90a90e8a657fa41aade391030cc1ad,
+        type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4033321827644246269, guid: 1c90a90e8a657fa41aade391030cc1ad,
+        type: 3}
+      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4033321827644246269, guid: 1c90a90e8a657fa41aade391030cc1ad,
+        type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4033321827644246269, guid: 1c90a90e8a657fa41aade391030cc1ad,
+        type: 3}
+      propertyPath: TrailModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4033321827644246269, guid: 1c90a90e8a657fa41aade391030cc1ad,
+        type: 3}
+      propertyPath: TrailModule.colorOverTrail.maxGradient.key0.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4033321827644246269, guid: 1c90a90e8a657fa41aade391030cc1ad,
+        type: 3}
+      propertyPath: TrailModule.colorOverTrail.maxGradient.key0.g
+      value: 0.96458334
+      objectReference: {fileID: 0}
+    - target: {fileID: 4033321827644246269, guid: 1c90a90e8a657fa41aade391030cc1ad,
+        type: 3}
+      propertyPath: TrailModule.colorOverTrail.maxGradient.key0.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4033321827644246269, guid: 1c90a90e8a657fa41aade391030cc1ad,
+        type: 3}
+      propertyPath: TrailModule.colorOverTrail.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4033321827644246269, guid: 1c90a90e8a657fa41aade391030cc1ad,
+        type: 3}
+      propertyPath: TrailModule.colorOverTrail.minGradient.key0.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4033321827644246269, guid: 1c90a90e8a657fa41aade391030cc1ad,
+        type: 3}
+      propertyPath: TrailModule.colorOverTrail.minGradient.key0.g
+      value: 0.6939113
+      objectReference: {fileID: 0}
+    - target: {fileID: 4033321827644246269, guid: 1c90a90e8a657fa41aade391030cc1ad,
+        type: 3}
+      propertyPath: TrailModule.colorOverTrail.minGradient.key0.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4033321827644246269, guid: 1c90a90e8a657fa41aade391030cc1ad,
+        type: 3}
+      propertyPath: TrailModule.colorOverTrail.minGradient.ctime1
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 4033321827644246269, guid: 1c90a90e8a657fa41aade391030cc1ad,
+        type: 3}
+      propertyPath: TrailModule.colorOverTrail.minGradient.key1.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4033321827644246269, guid: 1c90a90e8a657fa41aade391030cc1ad,
+        type: 3}
+      propertyPath: TrailModule.colorOverTrail.minGradient.key1.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4033321827644246269, guid: 1c90a90e8a657fa41aade391030cc1ad,
+        type: 3}
+      propertyPath: TrailModule.colorOverTrail.minGradient.key1.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4033321827644246269, guid: 1c90a90e8a657fa41aade391030cc1ad,
+        type: 3}
+      propertyPath: InitialModule.gravityModifier.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4033321828404996253, guid: 1c90a90e8a657fa41aade391030cc1ad,
+        type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 1000
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1c90a90e8a657fa41aade391030cc1ad, type: 3}
 --- !u!1 &864378439
 GameObject:
   m_ObjectHideFlags: 0
@@ -257,7 +411,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1283978666}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.633397, y: 1.8731766, z: -0.050323486}
+  m_LocalPosition: {x: -5.2088532, y: 47.885433, z: -746.6426}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

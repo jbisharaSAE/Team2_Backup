@@ -47,7 +47,7 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 1
-  prewarm: 0
+  prewarm: 1
   playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
@@ -4642,7 +4642,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1398763529610690224}
   m_Layer: 0
-  m_Name: Effect_09 (2)
+  m_Name: Burst Explosion Orange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -15,22 +15,17 @@ public class Balloon : MonoBehaviour
     [Tooltip("Points for pink balloon")]
     public int pinkBalloonPoints;
 
-    public Material[] myColours;
+    public Material[] myColours;  // orange, red, blue
     public GameObject[] fireworks;
-    public ScoreManager scoreManagerScript;
+  
 
     public AudioClip balloonPop;
     public AudioClip fireWorkSound;
 
     private AudioSource myAudioSource;
+    private int hitCounter;
     
 
-    private void Awake()
-    {
-        scoreManagerScript = GameObject.Find("EGO Score Manager").GetComponent<ScoreManager>();
-        
-
-    }
     // Start is called before the first frame update
     void Start()
     {
@@ -43,6 +38,8 @@ public class Balloon : MonoBehaviour
             if (i == randomNumber)
             {
                 gameObject.GetComponent<Renderer>().material = myColours[i];
+                hitCounter = i;
+
             }
                 
         }
@@ -67,13 +64,13 @@ public class Balloon : MonoBehaviour
         // spawn the same firework for each type of balloon, then destroys them
         switch (randomNumber)
         {
-            //pink balloon
+            //orange balloon
             case 0:
                 myObj = Instantiate(fireworks[0], transform.position, Quaternion.identity);
                 myObj.transform.up = Vector3.up;
                 Destroy(myObj, 3.5f);
                 Destroy(gameObject, 3.5f);
-                scoreManagerScript.UpdateScore(pinkBalloonPoints);
+                
                 break;
             //red balloon
             case 1:
@@ -81,15 +78,15 @@ public class Balloon : MonoBehaviour
                 myObj.transform.up = Vector3.up;
                 Destroy(myObj, 3.5f);
                 Destroy(gameObject, 3.5f);
-                scoreManagerScript.UpdateScore(redBalloonPoints);
+                
                 break;
-            //white ballon
+            //pink ballon
             case 2:
                 myObj = Instantiate(fireworks[2], transform.position, Quaternion.identity);
                 myObj.transform.up = Vector3.up;
                 Destroy(myObj, 3.5f);
                 Destroy(gameObject, 3.5f);
-                scoreManagerScript.UpdateScore(whiteBalloonPoints);
+                
                 break;
         }
         
@@ -101,12 +98,16 @@ public class Balloon : MonoBehaviour
 
         if(collision.gameObject.tag == "Arrow")
         {
-            ExplodeBalloon();
+            --hitCounter;
+            if (hitCounter <= 0)
+            {
+                ExplodeBalloon();
 
-            //destroys parent object, keeps the child (the balloon)
-            parentObj = transform.parent.gameObject;
-            transform.parent = null;
-            Destroy(parentObj);
+                //destroys parent object, keeps the child (the balloon)
+                parentObj = transform.parent.gameObject;
+                transform.parent = null;
+                Destroy(parentObj);
+            }
             
         }
     }
