@@ -25,7 +25,15 @@ public class Balloon : MonoBehaviour
     public AudioClip fireWorkSound;
 
     private AudioSource myAudioSource;
-    private int hitCounter;
+    public int hitCounter = 0;
+
+    // variables that control vibrating balloon when hit
+
+    private float speed;
+    private float amount;
+    private bool balloonHit;
+
+    
     
 
     // Start is called before the first frame update
@@ -52,7 +60,19 @@ public class Balloon : MonoBehaviour
         rb = gameObject.GetComponent<Rigidbody>();
     }
 
- 
+    // TODO - testing vibration on balloon when hit, performance issues maybe.
+    //private void Update()
+    //{
+    //    if (balloonHit)
+    //    {
+
+
+    //        gameObject.transform.position.x = Mathf.Sin(Time.time * speed) * amount;
+    //        gameObject.transform.position.y = Mathf.Sin(Time.deltaTime * speed) * amount;
+    //    }
+        
+    //}
+
 
     public void ExplodeBalloon()
     {
@@ -103,19 +123,13 @@ public class Balloon : MonoBehaviour
 
         if(collision.gameObject.tag == "Arrow")
         {
-            --hitCounter;
+            hitCounter--;
+            Destroy(collision.gameObject);
 
             // the hit counter determines how many hits a specific balloon is required before exploding, initialised in the start function
             switch (hitCounter)
             {
-                case 0:
-                    ExplodeBalloon();
-
-                    //destroys parent object, keeps the child (the balloon)
-                    parentObj = transform.parent.gameObject;
-                    transform.parent = null;
-                    Destroy(parentObj);
-                    break;
+                                   
                 case 1:
                     myAudioSource.clip = balloonHit1;
                     myAudioSource.Play();
@@ -124,6 +138,15 @@ public class Balloon : MonoBehaviour
                     myAudioSource.clip = balloonHit2;
                     myAudioSource.Play();
                     break;
+                default:
+                    ExplodeBalloon();
+
+                    //destroys parent object, keeps the child (the balloon)
+                    parentObj = transform.parent.gameObject;
+                    transform.parent = null;
+                    Destroy(parentObj);
+                    break;
+
             }
            
         }

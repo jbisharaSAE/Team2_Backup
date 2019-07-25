@@ -6,7 +6,10 @@ public class ShootingTutorial : MonoBehaviour
 {
     public SpawnEnemy firstEnemySpawn;
     public GameObject scoreBoard;
-    public AudioSource audioStart;
+
+    
+
+    private AudioSource audioStart;
 
     private void Start()
     {

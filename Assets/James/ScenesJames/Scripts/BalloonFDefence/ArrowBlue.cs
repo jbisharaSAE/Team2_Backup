@@ -15,6 +15,9 @@ public class ArrowBlue : MonoBehaviour
     {
         StartCoroutine(ArrowSounds());
         myAudioSource = gameObject.GetComponent<AudioSource>();
+        myAudioSource.clip = arrowShoot;
+        myAudioSource.Play();
+
         Destroy(gameObject, 30f);
     }
     private void Update()
@@ -42,9 +45,7 @@ public class ArrowBlue : MonoBehaviour
 
     private IEnumerator ArrowSounds()
     {
-        myAudioSource.clip = arrowShoot;
-        myAudioSource.Play();
-
+  
         yield return new WaitForSeconds(0.2f);
 
         myAudioSource.clip = arrowReload;

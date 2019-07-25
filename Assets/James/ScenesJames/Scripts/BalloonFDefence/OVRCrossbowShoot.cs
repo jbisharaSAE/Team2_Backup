@@ -32,11 +32,11 @@ namespace Nokobot.Assets.Crossbow
 
         private static OVRInput.Controller myController = OVRInput.Controller.RTrackedRemote;
 
-        void Start()
-        {
-            if (arrowLocation == null)
-                arrowLocation = transform;
-        }
+        //void Start()
+        //{
+        //    if (arrowLocation == null)
+        //        arrowLocation = transform;
+        //}
 
         void FixedUpdate()
         {

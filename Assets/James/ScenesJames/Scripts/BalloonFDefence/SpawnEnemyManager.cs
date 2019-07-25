@@ -12,10 +12,11 @@ public class SpawnEnemyManager : MonoBehaviour
     public GameObject powerUpmanager;
     public GameObject[] enemyPathAreas;
     public int difficultyCounter;
+    //public Transform finalPosition;
 
     private int index = 0;
     private bool isMoving;
-    private int lvlCounter = 0;
+    public int lvlCounter = 0;
     
 
     private int moveCounter = 0;
@@ -47,7 +48,7 @@ public class SpawnEnemyManager : MonoBehaviour
         spawnEnemyObj[i].enemyCounter = 0;
 
 
-        if (lvlCounter < 24)
+        if (lvlCounter < 18)
         {
 
             yield return new WaitForSeconds(8f);
@@ -99,7 +100,7 @@ public class SpawnEnemyManager : MonoBehaviour
 
         else
         {
-
+            myWaypointSystem.StartCoroutine("EndGame");
             //TODO end game state
         }
 
