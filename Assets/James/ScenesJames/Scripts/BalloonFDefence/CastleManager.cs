@@ -8,6 +8,8 @@ public class CastleManager : MonoBehaviour
     public float castleTotalHealth;
     private float currentCastleHealth;
 
+    public WaypointSystem endGameScript;
+
     public Image healthBar;
     private float healthRatio;
 
@@ -34,7 +36,7 @@ public class CastleManager : MonoBehaviour
 
         if (currentCastleHealth <= 0f)
         {
-            EndGame();
+            endGameScript.StartCoroutine("EndGame");
         }
     }
 
@@ -43,9 +45,5 @@ public class CastleManager : MonoBehaviour
         currentCastleHealth += 20f;
     }
 
-    private void EndGame()
-    {
-        //TODO .. unclear what happens when game ends at the moment
-        print("GameOver :)");
-    }
+    
 }

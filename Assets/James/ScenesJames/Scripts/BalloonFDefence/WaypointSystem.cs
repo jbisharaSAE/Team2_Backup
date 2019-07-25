@@ -8,11 +8,14 @@ public class WaypointSystem : MonoBehaviour
 {
     public GameObject player;
     public GameObject[] waypoints;
+    public GameObject fireWorks;
+    public SpawnEnemy[] spawnEnemyScripts;
     public float speed;
     public Image blackFadeImage;
     public GameObject crossBow;
     public Transform finishingPoint;
 
+    private GameObject[] enemies;
     private Color myColour;
     private int currentIndex = 0;
     private int destIndex = 0;
@@ -88,6 +91,25 @@ public class WaypointSystem : MonoBehaviour
             blackFadeImage.color = myColour;
             yield return null;
         }
+
+
+        //stops spawning enemies
+        foreach(SpawnEnemy spawnEnemies in spawnEnemyScripts)
+        {
+            spawnEnemies.isSpawning = false;
+        }
+
+        // destroy all enemies in scene
+        enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+        foreach(GameObject enemy in enemies)
+        {
+            Destroy(enemy);
+        }
+
+        // starts shooting fireworks
+        fireWorks.SetActive(true);
+        
 
         crossBow.SetActive(true);
         yield return null;

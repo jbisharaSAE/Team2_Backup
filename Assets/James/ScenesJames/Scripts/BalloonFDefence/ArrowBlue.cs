@@ -9,6 +9,7 @@ public class ArrowBlue : MonoBehaviour
     public AudioClip arrowReload;
     public AudioClip metalImpact;
     private AudioSource myAudioSource;
+    public GameObject myArrow;
 
 
     private void Start()
@@ -36,10 +37,14 @@ public class ArrowBlue : MonoBehaviour
         }
         else if(collision.gameObject.tag == "Enemy")
         {
+            Destroy(gameObject);
             myAudioSource.clip = metalImpact;
             myAudioSource.Play();
         }
-        
+        else
+        {
+            Destroy(myArrow);
+        }
 
     }
 
