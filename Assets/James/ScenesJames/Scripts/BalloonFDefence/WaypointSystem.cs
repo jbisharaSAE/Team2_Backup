@@ -20,6 +20,7 @@ public class WaypointSystem : MonoBehaviour
     private int currentIndex = 0;
     private int destIndex = 0;
     private bool isMoving = false;
+    private AudioSource endGameSFX;
     
     //private bool isPositive;
 
@@ -29,6 +30,7 @@ public class WaypointSystem : MonoBehaviour
         // finds all gameobjects with the tag Waypoint and puts them into array ordered by name
         waypoints = GameObject.FindGameObjectsWithTag("Waypoint").OrderBy(go => go.name).ToArray();
         myColour = blackFadeImage.color;
+        endGameSFX = gameObject.GetComponent<AudioSource>();
     }
     
 
@@ -71,6 +73,8 @@ public class WaypointSystem : MonoBehaviour
     public IEnumerator EndGame()
     {
         crossBow.SetActive(false);
+
+        endGameSFX.Play();
 
         while (myColour.a <= 1)
         {

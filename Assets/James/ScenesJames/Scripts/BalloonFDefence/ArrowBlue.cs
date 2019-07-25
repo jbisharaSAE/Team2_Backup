@@ -28,23 +28,15 @@ public class ArrowBlue : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag != "Powerup")
-        {
-            rb.velocity = Vector3.zero;
-            rb.angularVelocity = Vector3.zero;
+        Destroy(myArrow);
 
-            rb.constraints = RigidbodyConstraints.FreezeAll;
-        }
-        else if(collision.gameObject.tag == "Enemy")
+        if(collision.gameObject.tag == "Enemy")
         {
             Destroy(gameObject);
             myAudioSource.clip = metalImpact;
             myAudioSource.Play();
         }
-        else
-        {
-            Destroy(myArrow);
-        }
+
 
     }
 
