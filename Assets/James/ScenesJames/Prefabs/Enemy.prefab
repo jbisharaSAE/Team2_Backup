@@ -1102,25 +1102,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 400048}
     m_Modifications:
-    - target: {fileID: 6756635309294708552, guid: 56a9b3f0b8f424343be4c0c9dbf9e307,
-        type: 3}
-      propertyPath: m_Name
-      value: Balloon
-      objectReference: {fileID: 0}
     - target: {fileID: 6756635309294708556, guid: 56a9b3f0b8f424343be4c0c9dbf9e307,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.73
       objectReference: {fileID: 0}
     - target: {fileID: 6756635309294708556, guid: 56a9b3f0b8f424343be4c0c9dbf9e307,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.65
+      value: 1.64
       objectReference: {fileID: 0}
     - target: {fileID: 6756635309294708556, guid: 56a9b3f0b8f424343be4c0c9dbf9e307,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.36
       objectReference: {fileID: 0}
     - target: {fileID: 6756635309294708556, guid: 56a9b3f0b8f424343be4c0c9dbf9e307,
         type: 3}
@@ -1161,6 +1156,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6756635309294708552, guid: 56a9b3f0b8f424343be4c0c9dbf9e307,
+        type: 3}
+      propertyPath: m_Name
+      value: Balloon
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56a9b3f0b8f424343be4c0c9dbf9e307, type: 3}

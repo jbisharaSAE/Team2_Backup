@@ -15,6 +15,9 @@ public class Balloon : MonoBehaviour
     [Tooltip("Points for pink balloon")]
     public int pinkBalloonPoints;
 
+
+    public GameObject[] myBalloons;
+
     public Material[] myColours;  // orange, red, blue
     public GameObject[] fireworks;
     public ScoreManager myScoreManagerScript;
@@ -27,12 +30,14 @@ public class Balloon : MonoBehaviour
     private AudioSource myAudioSource;
     public int hitCounter = 0;
 
+   
+
     // variables that control vibrating balloon when hit
 
     private float speed;
     private float amount;
     private bool balloonHit;
-
+   
     
     
 
@@ -49,6 +54,11 @@ public class Balloon : MonoBehaviour
             {
                 gameObject.GetComponent<Renderer>().material = myColours[i];
                 hitCounter = i;
+
+                //balloons being turned on
+                myBalloons[i].SetActive(true);
+
+
 
             }
                 
@@ -88,7 +98,7 @@ public class Balloon : MonoBehaviour
         // spawn the same firework for each type of balloon, then destroys them
         switch (randomNumber)
         {
-            //orange balloon
+            //Red balloon
             case 0:
                 myObj = Instantiate(fireworks[0], transform.position, Quaternion.identity);
                 myObj.transform.up = Vector3.up;
@@ -96,7 +106,7 @@ public class Balloon : MonoBehaviour
                 Destroy(gameObject, 3.5f);
                 myScoreManagerScript.SendMessage("UpdateScore", redBalloonPoints);
                 break;
-            //red balloon
+            //Aqua balloon
             case 1:
                 myObj = Instantiate(fireworks[1], transform.position, Quaternion.identity);
                 myObj.transform.up = Vector3.up;
