@@ -6,7 +6,7 @@ public class Balloon : MonoBehaviour
 {
     
     private Rigidbody rb;
-    private int randomNumber;
+    public int numberRef;
 
     [Tooltip("Points for red balloon")]
     public int redBalloonPoints;
@@ -46,11 +46,11 @@ public class Balloon : MonoBehaviour
     {
 
         // Random colour generator
-        randomNumber = Random.Range(0, 3);
+        //randomNumber = Random.Range(0, 3);
        
         for(int i = 0; i < myColours.Length; ++i)
         {
-            if (i == randomNumber)
+            if (i == numberRef)
             {
                 gameObject.GetComponent<Renderer>().material = myColours[i];
                 hitCounter = i;
@@ -96,7 +96,7 @@ public class Balloon : MonoBehaviour
         myAudioSource.Play();
 
         // spawn the same firework for each type of balloon, then destroys them
-        switch (randomNumber)
+        switch (numberRef)
         {
             //Red balloon
             case 0:

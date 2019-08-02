@@ -10,9 +10,25 @@ public class EnemyScript : MonoBehaviour
     private float randomMySpeed;
     public GameObject [] EnemyColours;
     public string enemysTarget;
+    public GameObject[] enemyTypes;
+    private int randomNumber;
+    public Balloon myBalloonScript;
     
     void Start()
     {
+
+        // Random enemy type generator
+        randomNumber = Random.Range(0, 3);
+
+        for(int i = 0; i < 3; ++i)
+        {
+            if (randomNumber == i)
+            {
+                enemyTypes[i].SetActive(true);
+                myBalloonScript.numberRef = i;
+            }
+        }
+
         enemy = gameObject.GetComponent<NavMeshAgent>();
 
         randomMySpeed = Random.Range(10f, 35f);
