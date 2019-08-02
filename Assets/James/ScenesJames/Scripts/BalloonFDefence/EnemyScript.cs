@@ -8,7 +8,7 @@ public class EnemyScript : MonoBehaviour
     private NavMeshAgent enemy;
     private GameObject target;
     private float randomMySpeed;
-
+    public GameObject [] EnemyColours;
     public string enemysTarget;
     
     void Start()
@@ -34,6 +34,8 @@ public class EnemyScript : MonoBehaviour
         if(collision.gameObject.tag == "Arrow")
         {
             Destroy(collision.gameObject);
+
+        
         }
     }
     
