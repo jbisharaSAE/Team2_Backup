@@ -66,7 +66,7 @@ public class SpawnEnemyManager : MonoBehaviour
 
                 //increases number of enemies that spawn
                 enemyCountTotal += difficultyCounter;
-
+                enemyCounter = 0;
                 if (lvlCounter >= totalNumberWaves)
                 {
                     waypointSystemScript.StartCoroutine("EndGame");
