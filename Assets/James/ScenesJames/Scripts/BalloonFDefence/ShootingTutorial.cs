@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ShootingTutorial : MonoBehaviour
 {
-    public SpawnEnemy firstEnemySpawn;
+    public SpawnEnemyManager firstEnemySpawn;
     public GameObject scoreBoard;
 
     
@@ -17,9 +17,10 @@ public class ShootingTutorial : MonoBehaviour
     }
     public void StartSpawningEnemies()
     {
-        //scoreBoard.SetActive(true);
+        
         audioStart.Play();
-        firstEnemySpawn.isSpawning = true;
+        //starts spawning enemies
+        firstEnemySpawn.gameOver = false;
         Destroy(gameObject);
     }
 }

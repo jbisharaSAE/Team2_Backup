@@ -4,107 +4,92 @@ using UnityEngine;
 
 public class SpawnEnemyManager : MonoBehaviour
 {
-    public SpawnEnemy []spawnEnemyObj;
-    public WaypointSystem myWaypointSystem;
-    public Transform []healthBoardSpawnPoints;
-    public GameObject castleHealthBoard;
-    public float speed;
-    public GameObject powerUpmanager;
-    public GameObject[] enemyPathAreas;
-    public int difficultyCounter;
-    //public Transform finalPosition;
+    [Tooltip("How many enemies to spawn in total each wave || change difficultyCounter variable to change how much this increases per wave")]
+    public int enemyCountTotal;
 
-    private int index = 0;
-    private bool isMoving;
-    public int lvlCounter = 0;
+
+    [Tooltip("How fast the enemy will spawn")]
+    public float spawnInterval = 3f;
+    private float currentSpawnTime = 0;
+    public int enemyCounter;
+
+    [Tooltip("How often to change speed of spawn time for enemies")]
+    public float countdown = 10;
+    private float currentTime = 0;
+
+    [Tooltip("Number of waves total")]
+    public int totalNumberWaves;
+
+    public SpawnEnemy []spawnEnemyObj;
+
+    [Tooltip("Increases number of enemies each wave")]
+    public int difficultyCounter;
+
+    public WaypointSystem waypointSystemScript;
+    
+        
+    private int lvlCounter = 0;
+    public bool gameOver;
     
 
     private int moveCounter = 0;
 
     private void Update()
     {
-        if (isMoving)
+        currentSpawnTime += Time.deltaTime;
+        currentTime += Time.deltaTime;
+
+        if (!gameOver)
         {
-            // moves the castle health UI display behind each wave, everytime the next wave comes
-            castleHealthBoard.transform.position = Vector3.MoveTowards(castleHealthBoard.transform.position, healthBoardSpawnPoints[index].transform.position, speed * Time.deltaTime);
-
-            float dist = Vector3.Distance(castleHealthBoard.transform.position, healthBoardSpawnPoints[index].transform.position);
-
-            if (dist < 0.1f)
+            
+            if (enemyCounter < enemyCountTotal)
             {
                 
-                isMoving = false;
-            }
-        }
-    }
+                //how often to spawn enemies
+                if (currentSpawnTime >= spawnInterval)
+                {
+                    
+                    SpawnEnemies();
+                    currentSpawnTime = 0;
+                }
 
-    //simple coroutine that switches between fighting areas, and begins the process of moving the player position
-    public IEnumerator ChangeLevel(int i, bool goingUp)
-    {
-        ++lvlCounter;
-
-        // stop spawning enemies, fail safe for code on spawn enemy gameobject
-        spawnEnemyObj[i].isSpawning = false;
-        spawnEnemyObj[i].enemyCounter = 0;
-
-
-        if (lvlCounter < 18)
-        {
-
-            yield return new WaitForSeconds(8f);
-
-            // this allows the health bar board to move
-            isMoving = true;
-
-            // determines which direction the scoreboard needs to go
-            if (goingUp)
-            {
-                index = i + 1;
-                spawnEnemyObj[i + 1].enemyCountTotal += difficultyCounter;
-                spawnEnemyObj[i + 1].isSpawning = true;
-                spawnEnemyObj[i + 1].runOnce = false;
-                spawnEnemyObj[i + 1].goingUp = true;
-
-                // moves the spawning area for power up ballons to the next area wave of enemies
-                powerUpmanager.transform.position = new Vector3(enemyPathAreas[i + 1].transform.position.x, enemyPathAreas[i + 1].transform.position.y - 10f, enemyPathAreas[i + 1].transform.position.z);
+                //increases difficulty (makes enemies spawn faster)
+                if (currentTime >= countdown)
+                {
+                    spawnInterval -= 0.1f;
+                    currentTime = 0;
+                }
             }
             else
             {
-                index = i - 1;
-                spawnEnemyObj[i - 1].enemyCountTotal += difficultyCounter;
-                spawnEnemyObj[i - 1].isSpawning = true;
-                spawnEnemyObj[i - 1].runOnce = false;
-                spawnEnemyObj[i - 1].goingUp = true;
+                ++lvlCounter;
 
-                // moves the spawning area for power up ballons to the next area wave of enemies
-                powerUpmanager.transform.position = new Vector3(enemyPathAreas[i - 1].transform.position.x, enemyPathAreas[i - 1].transform.position.y - 10f, enemyPathAreas[i - 1].transform.position.z);
+                //increases number of enemies that spawn
+                enemyCountTotal += difficultyCounter;
+
+                if (lvlCounter >= totalNumberWaves)
+                {
+                    waypointSystemScript.StartCoroutine("EndGame");
+                }
             }
-
-            // this ensures when the board is in the middle that the board moves in the correct direction
-            if (i == 2)
-            {
-                spawnEnemyObj[i - 1].goingUp = false;
-            }
-            else if (i == 0)
-            {
-                spawnEnemyObj[i + 1].goingUp = true;
-            }
-
-            yield return new WaitForSeconds(3f); // normal time is 8
-            myWaypointSystem.SendMessage("ChangePlayerPosition", index);
-
-            // increases difficulty every wave, by increasing the total number of enemies
-            difficultyCounter += 1;
-            yield return null;
         }
-
-        else
-        {
-            myWaypointSystem.StartCoroutine("EndGame");
-            //TODO end game state
-        }
-
-
-
+        
+  
     }
+
+    private void SpawnEnemies()
+    {
+        ++enemyCounter;
+
+        int randomNumber = Random.Range(0, 6);
+
+        for(int i = 0; i < spawnEnemyObj.Length; ++i)
+        {
+            if(i == randomNumber)
+            {
+                spawnEnemyObj[i].SendMessage("Spawn");
+            }
+        }
+    }
+   
 }
