@@ -19,6 +19,7 @@ public class ShootingTutorial : MonoBehaviour
     {
         
         audioStart.Play();
+
         //starts spawning enemies
         firstEnemySpawn.gameOver = false;
         Destroy(gameObject);
