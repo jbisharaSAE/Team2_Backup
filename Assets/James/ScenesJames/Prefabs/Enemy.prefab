@@ -892,9 +892,9 @@ MonoBehaviour:
   - {fileID: 7416050258844843447}
   enemysTarget: 
   enemyTypes:
+  - {fileID: 2481986066178368345}
   - {fileID: 4279133952028524417}
   - {fileID: 7416050258844843447}
-  - {fileID: 2481986066178368345}
   myBalloonScript: {fileID: 4533959599501440364}
 --- !u!195 &1183725554
 NavMeshAgent:

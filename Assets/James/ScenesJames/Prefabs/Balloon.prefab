@@ -109,6 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48ebcbb9570cd554c9ef87f74f4c4fc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  numberRef: 0
   redBalloonPoints: 10
   aquaBalloonPoints: 5
   pinkBalloonPoints: 25
@@ -249,6 +250,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6756635309294708556}
     m_Modifications:
+    - target: {fileID: 2874971553508074585, guid: a7439c56c9ef9c14cb32a55b0e0b4fab,
+        type: 3}
+      propertyPath: m_Name
+      value: Balloon Aqua
+      objectReference: {fileID: 0}
+    - target: {fileID: 2874971553508074585, guid: a7439c56c9ef9c14cb32a55b0e0b4fab,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2874971553508112505, guid: a7439c56c9ef9c14cb32a55b0e0b4fab,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -318,16 +329,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2874971553508074585, guid: a7439c56c9ef9c14cb32a55b0e0b4fab,
-        type: 3}
-      propertyPath: m_Name
-      value: Balloon Aqua
-      objectReference: {fileID: 0}
-    - target: {fileID: 2874971553508074585, guid: a7439c56c9ef9c14cb32a55b0e0b4fab,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7439c56c9ef9c14cb32a55b0e0b4fab, type: 3}
@@ -459,7 +460,7 @@ PrefabInstance:
     - target: {fileID: 8769769926044267913, guid: 1d24462adeca3a34ca438c8fa46a9cb9,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8769769926044035497, guid: 1d24462adeca3a34ca438c8fa46a9cb9,
         type: 3}
