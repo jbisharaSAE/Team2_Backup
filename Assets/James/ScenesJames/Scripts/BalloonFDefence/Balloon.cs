@@ -89,6 +89,7 @@ public class Balloon : MonoBehaviour
         //disables interaction so we can still use the transform of this object to spawn fireworks
         gameObject.GetComponent<Renderer>().enabled = false;
         gameObject.GetComponent<SphereCollider>().enabled = false;
+        myBalloons[numberRef].SetActive(false);
         GameObject myObj;
         myAudioSource.clip = balloonPop;
         myAudioSource.Play();
