@@ -28,6 +28,7 @@ public class Balloon : MonoBehaviour
     public AudioClip fireWorkSound;
 
     private AudioSource myAudioSource;
+    private GameObject parentObj;
     public int hitCounter = 0;
 
    
@@ -47,8 +48,10 @@ public class Balloon : MonoBehaviour
 
         // Random colour generator
         //randomNumber = Random.Range(0, 3);
-       
-        for(int i = 0; i < myColours.Length; ++i)
+
+        parentObj = transform.parent.gameObject;
+
+        for (int i = 0; i < myColours.Length; ++i)
         {
             if (i == numberRef)
             {
@@ -130,7 +133,7 @@ public class Balloon : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        GameObject parentObj;
+        
 
         if(collision.gameObject.tag == "Arrow")
         {
@@ -153,8 +156,11 @@ public class Balloon : MonoBehaviour
                     ExplodeBalloon();
 
                     //destroys parent object, keeps the child (the balloon)
-                    parentObj = transform.parent.gameObject;
-                    transform.parent = null;
+
+                    //transform.parent = null;
+
+                    parentObj.SendMessage("StartRunning");
+
                     Destroy(parentObj);
                     break;
 

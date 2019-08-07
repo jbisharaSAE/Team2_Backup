@@ -16,6 +16,7 @@ public class SpawnEnemy : MonoBehaviour
         GameObject myEnemy = Instantiate(enemy, transform.position, Quaternion.identity);
         myEnemy.SetActive(true);
         myEnemy.GetComponent<EnemyScript>().enemysTarget = targetTag;
+        myEnemy.GetComponent<EnemyScript>().startingPoint = gameObject;
     }
  
 }
