@@ -5,19 +5,22 @@ using UnityEngine;
 public class DestroyOnTrigger : MonoBehaviour
 {
 
-    public GameObject objToDestroy;
+    private GameObject objToDestroy;
+
     public GameObject effect;
+
     // Start is called before the first frame update
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "powerup")
-            Instantiate(effect, objToDestroy.transform.position, objToDestroy.transform.rotation);
-        Destroy(objToDestroy);
+        if (other.gameObject.tag == "Powerup")
+        {
+            Destroy(other.gameObject);
+
+
+            objToDestroy = Instantiate(effect, other.gameObject.transform.position, Quaternion.identity);
+
+            Destroy(objToDestroy, 2f);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

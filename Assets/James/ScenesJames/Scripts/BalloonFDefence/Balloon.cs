@@ -157,7 +157,7 @@ public class Balloon : MonoBehaviour
 
                     //destroys parent object, keeps the child (the balloon)
 
-                    //transform.parent = null;
+                    transform.parent = null;
 
                     parentObj.SendMessage("StartRunning");
 
