@@ -161,7 +161,7 @@ public class Balloon : MonoBehaviour
 
                     parentObj.SendMessage("StartRunning");
 
-                    Destroy(parentObj);
+                    //Destroy(parentObj);
                     break;
 
             }
