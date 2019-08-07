@@ -71,16 +71,22 @@ public class EnemyScript : MonoBehaviour
         }
 
 
-        private void OnCollisionEnter(Collision collision)
+    }
+
+
+    private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Arrow")
+        if (collision.gameObject.tag == "Arrow")
         {
             Destroy(collision.gameObject);
 
-        
+
         }
     }
-    
+
+
+
+
     public IEnumerator SlowDownEnemy()
     {
         print("testing coroutine");
