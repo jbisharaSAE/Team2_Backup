@@ -55,13 +55,23 @@ public class EnemyScript : MonoBehaviour
             enemy.SetDestination(target.transform.position);
         }
         else
+
+      if (!isRunning)
+        {
+            //moves towards target on navmesh
+            enemy.SetDestination(target.transform.position);
+        }
+        else
         {
             enemy.SetDestination(startingPoint.transform.position);
+            if (enemy.remainingDistance < 1f)
+            {
+                Destroy(gameObject);
+            }
         }
-        
-    }
 
-    private void OnCollisionEnter(Collision collision)
+
+        private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.tag == "Arrow")
         {
