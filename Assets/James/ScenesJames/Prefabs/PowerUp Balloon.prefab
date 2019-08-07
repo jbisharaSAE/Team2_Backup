@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 949241400580402335}
   m_Layer: 10
   m_Name: PowerUp Balloon
-  m_TagString: Untagged
+  m_TagString: Powerup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -366,6 +366,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9095026849691185317, guid: 74f173d1bf33b4a4db291b057a01cdaa,
+        type: 3}
+      propertyPath: m_TagString
+      value: Powerup
+      objectReference: {fileID: 0}
     - target: {fileID: 9095026849691217029, guid: 74f173d1bf33b4a4db291b057a01cdaa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -466,6 +471,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6731382766569016364, guid: 1ebac3e0fad40e6448674ed83ca19a42,
+        type: 3}
+      propertyPath: m_TagString
+      value: Powerup
       objectReference: {fileID: 0}
     - target: {fileID: 6731382766569509324, guid: 1ebac3e0fad40e6448674ed83ca19a42,
         type: 3}
