@@ -89,6 +89,8 @@ public class Balloon : MonoBehaviour
 
     public void ExplodeBalloon()
     {
+        transform.parent = null;
+
         //disables interaction so we can still use the transform of this object to spawn fireworks
         gameObject.GetComponent<Renderer>().enabled = false;
         gameObject.GetComponent<SphereCollider>().enabled = false;
@@ -157,7 +159,7 @@ public class Balloon : MonoBehaviour
 
                     //destroys parent object, keeps the child (the balloon)
 
-                    transform.parent = null;
+                    
 
                     parentObj.SendMessage("StartRunning");
 
