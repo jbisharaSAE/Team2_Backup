@@ -12,6 +12,7 @@ public class WaypointSystem : MonoBehaviour
     public GameObject crossBow;
     public Transform finishingPoint;
     public SpawnEnemyManager spawnEnemyManager;
+    public GameObject powerupManager;
 
     private GameObject[] enemies;
     private Color myColour;
@@ -32,6 +33,7 @@ public class WaypointSystem : MonoBehaviour
 
     public IEnumerator EndGame()
     {
+        powerupManager.SetActive(false);
         crossBow.SetActive(false);
 
         endGameSFX.Play();
