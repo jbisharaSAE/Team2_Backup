@@ -56,8 +56,10 @@ public class EnemyScript : MonoBehaviour
         }
         else
         {
+            float distance = Vector3.Distance(transform.position, startingPoint.transform.position);
+
             enemy.SetDestination(startingPoint.transform.position);
-            if (enemy.remainingDistance < 1f)
+            if (distance < 1f)
             {
                 Destroy(gameObject);
             }
