@@ -119,8 +119,8 @@ MonoBehaviour:
   - {fileID: 8357358644301899931}
   - {fileID: 6798394559510880971}
   powerUpManagerScript: {fileID: 0}
-  slowTimeAudio: {fileID: 8300000, guid: 1e6fefe04e5dd63429361a726bdffdd1, type: 3}
-  healAudio: {fileID: 8300000, guid: 8d3c4e8f5d680ec4fb9295405a7b18e8, type: 3}
+  slowTimeAudio: {fileID: 8300000, guid: 42c9ba725ca6d1847915d5996adec442, type: 3}
+  healAudio: {fileID: 8300000, guid: ff0ae4aa22ae3784798a2127998f8d45, type: 3}
   rapidFireAudio: {fileID: 8300000, guid: 279dfbc4860c9644f8a30478b7f08b31, type: 3}
 --- !u!54 &3330949860686958926
 Rigidbody:

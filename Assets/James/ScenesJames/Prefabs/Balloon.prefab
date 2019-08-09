@@ -126,10 +126,10 @@ MonoBehaviour:
   - {fileID: 4485687680527473615, guid: 91698f033ebafe64ca17c0021b98329f, type: 3}
   - {fileID: 167058, guid: 61bf3bf2690a744498949331dfee7877, type: 3}
   myScoreManagerScript: {fileID: 0}
-  balloonPop: {fileID: 8300000, guid: 4836ad6ccf5578947adcafb2f150f2af, type: 3}
-  balloonHit1: {fileID: 8300000, guid: ff04545ab62c03a4d91fb1fb94a18fd0, type: 3}
-  balloonHit2: {fileID: 8300000, guid: 24b966de15d66c346896b95dca2a477a, type: 3}
-  fireWorkSound: {fileID: 8300000, guid: 53f8ba481bc341f4c8fd79532f603d82, type: 3}
+  balloonPop: {fileID: 8300000, guid: 1c7a8f02e1b859c4d9f63de0fedba527, type: 3}
+  balloonHit1: {fileID: 8300000, guid: 6514e0924f713a845b45e2b980c54f3e, type: 3}
+  balloonHit2: {fileID: 8300000, guid: 54a74dde03fded949ae0c9535b07a0c5, type: 3}
+  fireWorkSound: {fileID: 8300000, guid: 405c4189a0866de4ab91e22f651f0e04, type: 3}
   hitCounter: 0
 --- !u!54 &6756635309294708563
 Rigidbody:
