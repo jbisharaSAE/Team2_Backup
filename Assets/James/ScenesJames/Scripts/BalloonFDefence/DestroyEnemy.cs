@@ -17,16 +17,20 @@ public class DestroyEnemy : MonoBehaviour
         gateAttackSource.clip = gateAttackSFX;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         
         if (other.gameObject.tag == "Balloon")
         {
-            gateAttackSource.Play();
-            castleManagerScript.SendMessage("CastleHit", damageCastleAmount);
-            print("testing Collision");
-            StartCoroutine(StartExplosion());
-            Destroy(other.transform.parent.gameObject);
+            if (!other.transform.parent.gameObject.GetComponent<EnemyScript>().isRunning)
+            {
+                gateAttackSource.Play();
+                castleManagerScript.SendMessage("CastleHit", damageCastleAmount);
+                StartCoroutine(StartExplosion());
+                
+            }
+            
+            //Destroy(other.transform.parent.gameObject.GetComponent<EnemyScript>().);
         }
     }
 

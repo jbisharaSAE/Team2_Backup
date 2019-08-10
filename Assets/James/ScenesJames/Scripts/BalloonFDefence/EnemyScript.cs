@@ -9,12 +9,13 @@ public class EnemyScript : MonoBehaviour
     private GameObject target;
     private float randomMySpeed;
     private int randomNumber;
-    private bool isRunning;
+    
     private Animator enemyAnim;
 
     public GameObject [] EnemyColours;
     public GameObject[] enemyTypes;
 
+    public bool isRunning;
     public GameObject startingPoint;
     public string enemysTarget;
     public Balloon myBalloonScript;
@@ -22,6 +23,8 @@ public class EnemyScript : MonoBehaviour
     void Start()
     {
         enemyAnim = GetComponent<Animator>();
+        enemyAnim.SetBool("isAttacking", false);
+        enemyAnim.SetBool("isRunning", false);
 
         // Random enemy type generator
         randomNumber = Random.Range(0, 3);
@@ -53,6 +56,17 @@ public class EnemyScript : MonoBehaviour
         {
             //moves towards target on navmesh
             enemy.SetDestination(target.transform.position);
+
+            float distance = Vector3.Distance(transform.position, target.transform.position);
+
+            if (distance < 1f)
+            {
+                enemyAnim.Play("Attack");
+
+                print("testing distance if statement");
+                //enemyAnim.SetBool("isRunning", false);
+                //enemyAnim.SetBool("isAttacking", true);
+            }
         }
         else
         {
@@ -96,6 +110,7 @@ public class EnemyScript : MonoBehaviour
         isRunning = true;
 
         enemyAnim.SetBool("isRunning", isRunning);
+        enemyAnim.SetBool("isAttacking", !isRunning);
     }
 
 
