@@ -863,7 +863,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 100048}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 9000000, guid: ba24e610e0a338545b447ff44a3cf1cc, type: 3}
   m_Controller: {fileID: 9100000, guid: 8aba7a975cc08dd4fb1345966135537b, type: 2}
   m_CullingMode: 1
@@ -1305,6 +1305,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 400048}
     m_Modifications:
+    - target: {fileID: 6756635309294708552, guid: 56a9b3f0b8f424343be4c0c9dbf9e307,
+        type: 3}
+      propertyPath: m_Name
+      value: Balloon
+      objectReference: {fileID: 0}
+    - target: {fileID: 6756635309294708552, guid: 56a9b3f0b8f424343be4c0c9dbf9e307,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6756635309294708556, guid: 56a9b3f0b8f424343be4c0c9dbf9e307,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1373,16 +1383,6 @@ PrefabInstance:
     - target: {fileID: 6756635309294708556, guid: 56a9b3f0b8f424343be4c0c9dbf9e307,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6756635309294708552, guid: 56a9b3f0b8f424343be4c0c9dbf9e307,
-        type: 3}
-      propertyPath: m_Name
-      value: Balloon
-      objectReference: {fileID: 0}
-    - target: {fileID: 6756635309294708552, guid: 56a9b3f0b8f424343be4c0c9dbf9e307,
-        type: 3}
-      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2781119944954497729, guid: 56a9b3f0b8f424343be4c0c9dbf9e307,

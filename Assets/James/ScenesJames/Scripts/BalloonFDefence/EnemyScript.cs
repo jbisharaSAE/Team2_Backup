@@ -22,9 +22,7 @@ public class EnemyScript : MonoBehaviour
     
     void Start()
     {
-        enemyAnim = GetComponent<Animator>();
-        enemyAnim.SetBool("isAttacking", false);
-        enemyAnim.SetBool("isRunning", false);
+        
 
         // Random enemy type generator
         randomNumber = Random.Range(0, 3);
@@ -37,6 +35,10 @@ public class EnemyScript : MonoBehaviour
                 myBalloonScript.numberRef = i;
             }
         }
+
+        enemyAnim = enemyTypes[randomNumber].GetComponent<Animator>();
+        enemyAnim.SetBool("isAttacking", false);
+        enemyAnim.SetBool("isRunning", false);
 
         enemy = gameObject.GetComponent<NavMeshAgent>();
 
@@ -59,13 +61,13 @@ public class EnemyScript : MonoBehaviour
 
             float distance = Vector3.Distance(transform.position, target.transform.position);
 
-            if (distance < 1f)
+            if (distance < 5f)
             {
-                enemyAnim.Play("Attack");
+                //enemyAnim.Play("Attack");
 
                 print("testing distance if statement");
-                //enemyAnim.SetBool("isRunning", false);
-                //enemyAnim.SetBool("isAttacking", true);
+                enemyAnim.SetBool("isRunning", false);
+                enemyAnim.SetBool("isAttacking", true);
             }
         }
         else
@@ -107,6 +109,8 @@ public class EnemyScript : MonoBehaviour
 
     public void StartRunning()
     {
+
+        print("testing method call");
         isRunning = true;
 
         enemyAnim.SetBool("isRunning", isRunning);
