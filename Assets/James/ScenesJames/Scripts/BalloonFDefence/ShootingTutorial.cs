@@ -6,6 +6,7 @@ public class ShootingTutorial : MonoBehaviour
 {
     public SpawnEnemyManager firstEnemySpawn;
     public GameObject scoreBoard;
+    public AudioClip gameStart;
 
     
 
@@ -14,14 +15,25 @@ public class ShootingTutorial : MonoBehaviour
     private void Start()
     {
         audioStart = gameObject.GetComponent<AudioSource>();
+        StartCoroutine(TestingStart());
+        
     }
     public void StartSpawningEnemies()
     {
-        AudioManagerBB.Instance.PlayAudio(AudioManagerBB.Instance.gameStart);
+        firstEnemySpawn.gameOver = false;
+        AudioManagerBB.Instance.PlayAudio(gameStart);
         //audioStart.Play();
 
         //starts spawning enemies
-        firstEnemySpawn.gameOver = false;
+        
         Destroy(gameObject);
+    }
+
+    IEnumerator TestingStart()
+    {
+        Debug.Log("test");
+        yield return new WaitForSeconds(4f);
+
+        StartSpawningEnemies();
     }
 }

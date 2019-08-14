@@ -19,6 +19,14 @@ public class AudioManagerBB : MonoBehaviour
     private AudioSource audioPlayerSource;
 
 
+    void Awake()
+    {
+        
+
+        // Here we save our singleton instance
+        Instance = this;
+
+    }
     // Start is called before the first frame update
     void Start()
     {
