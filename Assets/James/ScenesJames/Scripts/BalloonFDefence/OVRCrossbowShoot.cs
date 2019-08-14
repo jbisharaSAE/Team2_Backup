@@ -16,6 +16,7 @@ namespace Nokobot.Assets.Crossbow
         public ShootingTutorial tutorialBoard;
         public GameObject tutorial1;
         public GameObject tutorial2;
+        public Animator xBowAnimController;
         
 
         private float timer;
@@ -51,7 +52,18 @@ namespace Nokobot.Assets.Crossbow
                     
                     timer = 0f;
 
-                    Instantiate(arrowPrefab, arrowLocation.position, arrowLocation.rotation).GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * shotPower);
+                    GameObject arrow = Instantiate(arrowPrefab, arrowLocation.position, arrowLocation.rotation);
+                    arrow.GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * shotPower);
+
+                    if (shootGap >= 0)
+                    {
+                        arrow.GetComponent<AudioSource>().volume = 0f;
+                    }
+                    else
+                    {
+                        arrow.GetComponent<AudioSource>().volume = 1f;
+                    }
+                    xBowAnimController.SetTrigger("normalTrigger");
 
 
                 }

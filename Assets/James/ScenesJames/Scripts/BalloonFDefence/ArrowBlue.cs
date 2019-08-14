@@ -8,7 +8,7 @@ public class ArrowBlue : MonoBehaviour
     public AudioClip arrowShoot;
     public AudioClip arrowReload;
     public AudioClip metalImpact;
-    private AudioSource myAudioSource;
+    public AudioSource myAudioSource;
     public GameObject myArrow;
 
 

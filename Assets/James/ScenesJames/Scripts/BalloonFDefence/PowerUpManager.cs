@@ -31,6 +31,8 @@ public class PowerUpManager : MonoBehaviour
         {
             //pcCrossBowshootScript.shootGap = 0f;
             crossBowScript.shootGap = 0f;
+            crossBowScript.xBowAnimController.SetTrigger("rapidFire");
+
             rapidFireTimer -= Time.deltaTime;
         }
         else
