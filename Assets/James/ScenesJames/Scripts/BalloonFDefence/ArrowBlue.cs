@@ -33,8 +33,10 @@ public class ArrowBlue : MonoBehaviour
         if(collision.gameObject.tag == "Enemy")
         {
             Destroy(gameObject);
-            myAudioSource.clip = metalImpact;
-            myAudioSource.Play();
+            AudioManagerBB.Instance.PlayAudio(metalImpact);
+
+            //myAudioSource.clip = metalImpact;
+            //myAudioSource.Play();
         }
 
 

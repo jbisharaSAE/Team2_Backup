@@ -17,8 +17,8 @@ public class ShootingTutorial : MonoBehaviour
     }
     public void StartSpawningEnemies()
     {
-        
-        audioStart.Play();
+        AudioManagerBB.Instance.PlayAudio(AudioManagerBB.Instance.gameStart);
+        //audioStart.Play();
 
         //starts spawning enemies
         firstEnemySpawn.gameOver = false;

@@ -67,22 +67,25 @@ public class PowerUpBalloon : MonoBehaviour
             case 0:
                 powerUpManagerScript.SendMessage("PurplePowerUpHit");
                 Destroy(gameObject);
-                myAudioSource.clip = rapidFireAudio;
-                myAudioSource.Play();
+                AudioManagerBB.Instance.PlayAudio(rapidFireAudio);
+                //myAudioSource.clip = rapidFireAudio;
+                //myAudioSource.Play();
                 break;
             //orange balloon
             case 1:
                 powerUpManagerScript.SendMessage("OrangePowerUpHit");
                 Destroy(gameObject);
-                myAudioSource.clip = slowTimeAudio;
-                myAudioSource.Play();
+                AudioManagerBB.Instance.PlayAudio(slowTimeAudio);
+                //myAudioSource.clip = slowTimeAudio;
+                //myAudioSource.Play();
                 break;
             //green ballon
             case 2:
                 powerUpManagerScript.SendMessage("GreenPowerUpHit");
                 Destroy(gameObject);
-                myAudioSource.clip = healAudio;
-                myAudioSource.Play();
+                AudioManagerBB.Instance.PlayAudio(healAudio);
+                //myAudioSource.clip = healAudio;
+                //myAudioSource.Play();
                 break;
         }
 

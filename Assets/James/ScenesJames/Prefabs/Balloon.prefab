@@ -129,7 +129,7 @@ MonoBehaviour:
   balloonPop: {fileID: 8300000, guid: 1c7a8f02e1b859c4d9f63de0fedba527, type: 3}
   balloonHit1: {fileID: 8300000, guid: 6514e0924f713a845b45e2b980c54f3e, type: 3}
   balloonHit2: {fileID: 8300000, guid: 54a74dde03fded949ae0c9535b07a0c5, type: 3}
-  fireWorkSound: {fileID: 8300000, guid: 405c4189a0866de4ab91e22f651f0e04, type: 3}
+  fireWorkSound: {fileID: 8300000, guid: c68d43f62c7d27f4c99dce376e6b8426, type: 3}
   hitCounter: 0
 --- !u!54 &6756635309294708563
 Rigidbody:

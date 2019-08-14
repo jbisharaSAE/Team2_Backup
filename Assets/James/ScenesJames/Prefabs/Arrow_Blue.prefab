@@ -175,9 +175,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 54315726283532316}
-  arrowShoot: {fileID: 8300000, guid: e13d309dd81394846801fc6fc99948f4, type: 3}
+  arrowShoot: {fileID: 8300000, guid: 72c5a16ddae4d8b4084dc3436e5f3575, type: 3}
   arrowReload: {fileID: 8300000, guid: 8f30c6dee69bfd646b33a60fddde5e5e, type: 3}
-  metalImpact: {fileID: 8300000, guid: fc295a257607a4547b6a96cd6ce6f537, type: 3}
+  metalImpact: {fileID: 8300000, guid: 30d6a54f68d853b43aae8f4a81e3db62, type: 3}
+  myAudioSource: {fileID: 0}
   myArrow: {fileID: 1425818297931132}
 --- !u!1 &1433511959538088
 GameObject:
@@ -320,6 +321,7 @@ MonoBehaviour:
   arrowShoot: {fileID: 8300000, guid: e13d309dd81394846801fc6fc99948f4, type: 3}
   arrowReload: {fileID: 8300000, guid: 8f30c6dee69bfd646b33a60fddde5e5e, type: 3}
   metalImpact: {fileID: 8300000, guid: fc295a257607a4547b6a96cd6ce6f537, type: 3}
+  myAudioSource: {fileID: 0}
   myArrow: {fileID: 1425818297931132}
 --- !u!54 &1844604111964645594
 Rigidbody:

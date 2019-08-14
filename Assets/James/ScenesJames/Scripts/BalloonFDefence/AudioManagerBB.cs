@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class AudioManagerBB : MonoBehaviour
 {
+    public static AudioManagerBB Instance { get; private set; }
+
     public AudioClip gameStart;
-    public AudioClip slowTime;
-    public AudioClip hpRegen;
-    public AudioClip rapidFire;
-    public AudioClip metalHit;
-    public AudioClip balloonHit;
-    public AudioClip crossBowFire;
-    public AudioClip crossBowReload;
-    public AudioClip gateAttack;
+    //public AudioClip slowTime;
+    //public AudioClip hpRegen;
+    //public AudioClip rapidFire;
+    //public AudioClip metalHit;
+    //public AudioClip balloonHit;
+    //public AudioClip crossBowFire;
+    //public AudioClip crossBowReload;
+    //public AudioClip gateAttack;
 
     private AudioSource audioPlayerSource;
 
@@ -23,5 +25,10 @@ public class AudioManagerBB : MonoBehaviour
         audioPlayerSource = GetComponent<AudioSource>();
     }
 
-    
+    public void PlayAudio(AudioClip clip)
+    {
+        audioPlayerSource.clip = clip;
+        audioPlayerSource.Play();
+    }
+
 }

@@ -24,7 +24,8 @@ public class DestroyEnemy : MonoBehaviour
         {
             if (!other.transform.parent.gameObject.GetComponent<EnemyScript>().isRunning)
             {
-                gateAttackSource.Play();
+                //gateAttackSource.Play();
+                AudioManagerBB.Instance.PlayAudio(gateAttackSFX);
                 castleManagerScript.SendMessage("CastleHit", damageCastleAmount);
                 StartCoroutine(StartExplosion());
                 
