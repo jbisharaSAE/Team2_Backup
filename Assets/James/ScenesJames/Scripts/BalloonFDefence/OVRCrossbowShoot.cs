@@ -52,18 +52,18 @@ namespace Nokobot.Assets.Crossbow
                     
                     timer = 0f;
 
-                    GameObject arrow = Instantiate(arrowPrefab, arrowLocation.position, arrowLocation.rotation);
-                    arrow.GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * shotPower);
+                    Instantiate(arrowPrefab, arrowLocation.position, arrowLocation.rotation).GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * shotPower); 
+                    
 
-                    if (shootGap >= 0)
-                    {
-                        arrow.GetComponent<AudioSource>().volume = 0f;
-                    }
-                    else
-                    {
-                        arrow.GetComponent<AudioSource>().volume = 1f;
-                    }
-                    xBowAnimController.SetTrigger("normalTrigger");
+                    //if (shootGap == 0)
+                    //{
+                    //    arrow.GetComponent<AudioSource>().volume = 0f;
+                    //}
+                    //else
+                    //{
+                    //    arrow.GetComponent<AudioSource>().volume = 1f;
+                    //}
+                    //xBowAnimController.SetTrigger("normalTrigger");
 
 
                 }
