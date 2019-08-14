@@ -140,6 +140,7 @@ MonoBehaviour:
   tutorialBoard: {fileID: 0}
   tutorial1: {fileID: 0}
   tutorial2: {fileID: 0}
+  xBowAnimController: {fileID: 0}
   specialAbility: 0
   shootGap: 0.4
   shotPower: 100
