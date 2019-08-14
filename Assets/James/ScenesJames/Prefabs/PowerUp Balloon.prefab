@@ -170,7 +170,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 12
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -223,7 +223,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.7083333
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -462,6 +462,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6121730004373186643}
     m_Modifications:
+    - target: {fileID: 6731382766569016364, guid: 1ebac3e0fad40e6448674ed83ca19a42,
+        type: 3}
+      propertyPath: m_Name
+      value: Rapid Fire Balloon2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6731382766569016364, guid: 1ebac3e0fad40e6448674ed83ca19a42,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6731382766569016364, guid: 1ebac3e0fad40e6448674ed83ca19a42,
+        type: 3}
+      propertyPath: m_TagString
+      value: Powerup
+      objectReference: {fileID: 0}
     - target: {fileID: 6731382766569509324, guid: 1ebac3e0fad40e6448674ed83ca19a42,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -516,21 +531,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6731382766569016364, guid: 1ebac3e0fad40e6448674ed83ca19a42,
-        type: 3}
-      propertyPath: m_Name
-      value: Rapid Fire Balloon2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6731382766569016364, guid: 1ebac3e0fad40e6448674ed83ca19a42,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6731382766569016364, guid: 1ebac3e0fad40e6448674ed83ca19a42,
-        type: 3}
-      propertyPath: m_TagString
-      value: Powerup
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ebac3e0fad40e6448674ed83ca19a42, type: 3}
