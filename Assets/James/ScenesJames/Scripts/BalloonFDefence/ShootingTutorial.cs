@@ -15,7 +15,7 @@ public class ShootingTutorial : MonoBehaviour
     private void Start()
     {
         audioStart = gameObject.GetComponent<AudioSource>();
-        StartCoroutine(TestingStart());
+        //StartCoroutine(TestingStart());
         
     }
     public void StartSpawningEnemies()
