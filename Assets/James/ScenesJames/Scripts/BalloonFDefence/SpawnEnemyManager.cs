@@ -26,14 +26,20 @@ public class SpawnEnemyManager : MonoBehaviour
     public int difficultyCounter;
 
     public WaypointSystem waypointSystemScript;
-    
+
+    public AudioClip[] audioWaveClips;
+    public AudioSource audioSource;
         
-    private int lvlCounter = 0;
+    private int lvlCounter = 1;
     public bool gameOver;
     
 
     private int moveCounter = 0;
 
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
     private void Update()
     {
         currentSpawnTime += Time.deltaTime;
@@ -63,6 +69,7 @@ public class SpawnEnemyManager : MonoBehaviour
             else
             {
                 ++lvlCounter;
+                audioSource.clip = audioWaveClips[lvlCounter];
 
                 //increases number of enemies that spawn
                 enemyCountTotal += difficultyCounter;
