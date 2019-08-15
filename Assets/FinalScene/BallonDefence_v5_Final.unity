@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.28762177, g: 0.45516706, b: 0.6818799, a: 1}
+  m_IndirectSpecularColor: {r: 0.28768, g: 0.45518005, b: 0.6818775, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -55981,10 +55981,10 @@ MonoBehaviour:
   difficultyCounter: 1
   waypointSystemScript: {fileID: 1104450656}
   audioWaveClips:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: b59e160e8fe3e2c4b99b31235f789549, type: 3}
+  - {fileID: 8300000, guid: 7c6d38c44666dcc4f9eccbfca6a6a9ad, type: 3}
+  - {fileID: 8300000, guid: 3fe27505a22bbb948b1490cbf39b8b3a, type: 3}
+  - {fileID: 8300000, guid: 84c5902f60a23624bb107ee334880ca6, type: 3}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
