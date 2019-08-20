@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class SpawnEnemyManager : MonoBehaviour
 {
@@ -36,6 +37,8 @@ public class SpawnEnemyManager : MonoBehaviour
     private int lvlCounter = 1;
     public bool gameOver;
     private bool runOnce = true;
+
+    public TextMeshProUGUI myText;
     
 
     private int moveCounter = 0;
@@ -49,6 +52,8 @@ public class SpawnEnemyManager : MonoBehaviour
     {
         currentSpawnTime += Time.deltaTime;
         currentTime += Time.deltaTime;
+
+        myText.text = lvlCounter.ToString();
 
         if (!gameOver)
         {
@@ -120,9 +125,14 @@ public class SpawnEnemyManager : MonoBehaviour
 
     IEnumerator TimeBetweenWaves()
     {
+
+        print("testing wave between");
         runOnce = false;
         yield return new WaitForSeconds(20f);
         audioSource.clip = audioWaveClips[lvlCounter];
+        audioSource.Play();
+
+        AudioManagerBB.Instance.PlayAudio(AudioManagerBB.Instance.gameStart);
 
         audioSource.Play();
         enemyCounter = 0;

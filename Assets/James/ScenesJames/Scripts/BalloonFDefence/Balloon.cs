@@ -97,13 +97,13 @@ public class Balloon : MonoBehaviour
         myBalloons[numberRef].SetActive(false);
         GameObject myObj;
 
-        AudioManagerBB.Instance.PlayAudio(balloonPop);
-        AudioManagerBB.Instance.PlayAudio(fireWorkSound);
+        //AudioManagerBB.Instance.PlayAudio(balloonPop);
+        //AudioManagerBB.Instance.PlayAudio(fireWorkSound);
 
-        //myAudioSource.clip = balloonPop;
-        //myAudioSource.Play();
-        //myAudioSource.clip = fireWorkSound;
-        //myAudioSource.Play();
+        myAudioSource.clip = balloonPop;
+        myAudioSource.Play();
+        myAudioSource.clip = fireWorkSound;
+        myAudioSource.Play();
 
         // spawn the same firework for each type of balloon, then destroys them
         switch (numberRef)
@@ -151,14 +151,14 @@ public class Balloon : MonoBehaviour
             {
                                    
                 case 1:
-                    AudioManagerBB.Instance.PlayAudio(balloonHit1);
-                    //myAudioSource.clip = balloonHit1;
-                    //myAudioSource.Play();
+                    //AudioManagerBB.Instance.PlayAudio(balloonHit1);
+                    myAudioSource.clip = balloonHit1;
+                    myAudioSource.Play();
                     break;
                 case 2:
-                    AudioManagerBB.Instance.PlayAudio(balloonHit2);
-                    //myAudioSource.clip = balloonHit2;
-                    //myAudioSource.Play();
+                    //AudioManagerBB.Instance.PlayAudio(balloonHit2);
+                    myAudioSource.clip = balloonHit2;
+                    myAudioSource.Play();
                     break;
                 default:
                     ExplodeBalloon();
