@@ -25,6 +25,9 @@ public class SpawnEnemyManager : MonoBehaviour
     [Tooltip("Increases number of enemies each wave")]
     public int difficultyCounter;
 
+    public GameObject finalEnemy;
+    public GameObject finalSpawnPoint;
+
     public WaypointSystem waypointSystemScript;
 
     public AudioClip[] audioWaveClips;
@@ -74,9 +77,11 @@ public class SpawnEnemyManager : MonoBehaviour
                 //increases number of enemies that spawn
                 enemyCountTotal += difficultyCounter;
                 enemyCounter = 0;
+
                 if (lvlCounter >= totalNumberWaves)
                 {
-                    waypointSystemScript.StartCoroutine("EndGame");
+                    FinalWave();
+                    
                 }
             }
         }
@@ -97,6 +102,12 @@ public class SpawnEnemyManager : MonoBehaviour
                 spawnEnemyObj[i].SendMessage("Spawn");
             }
         }
+    }
+
+    private void FinalWave()
+    {
+        Instantiate(finalEnemy, finalSpawnPoint.transform.position, Quaternion.identity);
+        //waypointSystemScript.StartCoroutine("EndGame");
     }
    
 }
