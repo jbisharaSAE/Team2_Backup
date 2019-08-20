@@ -64,6 +64,7 @@ namespace Nokobot.Assets.Crossbow
                     {
                         arrow.GetComponent<AudioSource>().volume = 1f;
                     }
+
                     xBowAnimController.SetTrigger("normalTrigger");
 
 
