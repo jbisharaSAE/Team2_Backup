@@ -37554,10 +37554,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 7c6d38c44666dcc4f9eccbfca6a6a9ad, type: 3}
   - {fileID: 8300000, guid: 3fe27505a22bbb948b1490cbf39b8b3a, type: 3}
   - {fileID: 8300000, guid: 84c5902f60a23624bb107ee334880ca6, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 2fbffc174ad714b4eb075bcec2a09ee2, type: 3}
+  - {fileID: 8300000, guid: bd9f471c9f69e62409e98ee63c35e89a, type: 3}
+  - {fileID: 8300000, guid: ca3578eac875d3843892d3ee1a6c259e, type: 3}
+  - {fileID: 8300000, guid: d9ffbab9fd319f547a0fb8e959cc8bd4, type: 3}
   audioSource: {fileID: 0}
   gameOver: 1
 --- !u!82 &1190442131
