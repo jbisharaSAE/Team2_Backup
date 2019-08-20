@@ -41,7 +41,8 @@ public class SpawnEnemyManager : MonoBehaviour
 
     private void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+        audioSource = gameObject.GetComponent<AudioSource>();
+        
     }
     private void Update()
     {
@@ -73,6 +74,7 @@ public class SpawnEnemyManager : MonoBehaviour
             {
                 ++lvlCounter;
                 audioSource.clip = audioWaveClips[lvlCounter];
+                audioSource.Play();
 
                 //increases number of enemies that spawn
                 enemyCountTotal += difficultyCounter;
