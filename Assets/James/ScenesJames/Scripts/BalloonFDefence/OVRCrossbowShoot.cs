@@ -59,13 +59,15 @@ namespace Nokobot.Assets.Crossbow
                     if (shootGap == 0)
                     {
                         arrow.GetComponent<AudioSource>().volume = 0f;
+                        xBowAnimController.SetTrigger("rapidTrigger");
                     }
                     else
                     {
+                        xBowAnimController.SetTrigger("normalTrigger");
                         arrow.GetComponent<AudioSource>().volume = 1f;
                     }
 
-                    xBowAnimController.SetTrigger("normalTrigger");
+                    
 
 
                 }
