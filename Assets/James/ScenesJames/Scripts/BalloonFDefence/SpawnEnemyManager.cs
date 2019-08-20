@@ -35,6 +35,7 @@ public class SpawnEnemyManager : MonoBehaviour
         
     private int lvlCounter = 1;
     public bool gameOver;
+    private bool runOnce = true;
     
 
     private int moveCounter = 0;
@@ -72,18 +73,23 @@ public class SpawnEnemyManager : MonoBehaviour
             }
             else
             {
+                runOnce = true;
                 ++lvlCounter;
-                audioSource.clip = audioWaveClips[lvlCounter];
-                audioSource.Play();
+                
 
                 //increases number of enemies that spawn
                 enemyCountTotal += difficultyCounter;
-                enemyCounter = 0;
+                
+                
 
                 if (lvlCounter >= totalNumberWaves)
                 {
                     FinalWave();
                     
+                }
+                else if (runOnce)
+                {
+                    StartCoroutine(TimeBetweenWaves());
                 }
             }
         }
@@ -110,6 +116,16 @@ public class SpawnEnemyManager : MonoBehaviour
     {
         Instantiate(finalEnemy, finalSpawnPoint.transform.position, Quaternion.identity);
         //waypointSystemScript.StartCoroutine("EndGame");
+    }
+
+    IEnumerator TimeBetweenWaves()
+    {
+        runOnce = false;
+        yield return new WaitForSeconds(20f);
+        audioSource.clip = audioWaveClips[lvlCounter];
+
+        audioSource.Play();
+        enemyCounter = 0;
     }
    
 }

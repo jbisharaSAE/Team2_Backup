@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.2876949, g: 0.45518667, b: 0.68187755, a: 1}
+  m_IndirectSpecularColor: {r: 0.28762177, g: 0.45516706, b: 0.6818799, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -37573,13 +37573,13 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: b59e160e8fe3e2c4b99b31235f789549, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.681
   m_Pitch: 1
   Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 157
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -54997,15 +54997,15 @@ PrefabInstance:
       objectReference: {fileID: 1725305139}
     - target: {fileID: 301665793, guid: f5a7858d6ac83524f924fef90a04d16d, type: 3}
       propertyPath: damageCastleAmount
-      value: 0.001
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 301665792, guid: f5a7858d6ac83524f924fef90a04d16d, type: 3}
       propertyPath: m_Size.x
-      value: 13.71
+      value: 33.59
       objectReference: {fileID: 0}
     - target: {fileID: 301665792, guid: f5a7858d6ac83524f924fef90a04d16d, type: 3}
       propertyPath: m_Size.z
-      value: 3.6
+      value: 11.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5a7858d6ac83524f924fef90a04d16d, type: 3}
@@ -65760,6 +65760,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 84e9454106ecb144d920f3a518176236, type: 2}
+    - target: {fileID: 1677541685643253861, guid: 14d6513c7ac0ea943ac7525a4cf29ee6,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14d6513c7ac0ea943ac7525a4cf29ee6, type: 3}
 --- !u!114 &1830502637 stripped
