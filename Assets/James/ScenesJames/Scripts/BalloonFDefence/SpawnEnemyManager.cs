@@ -37,6 +37,7 @@ public class SpawnEnemyManager : MonoBehaviour
     private int lvlCounter = 1;
     public bool gameOver;
     private bool runOnce = true;
+    private bool runOnceEnemy = true;
 
     public TextMeshProUGUI myText;
     
@@ -85,11 +86,19 @@ public class SpawnEnemyManager : MonoBehaviour
 
                 if (lvlCounter >= totalNumberWaves)
                 {
-                    FinalWave();
+                    if (runOnceEnemy)
+                    {
+                        audioSource.clip = AudioManagerBB.Instance.gameStart;
+                        audioSource.Play();
+                        runOnceEnemy = false;
+                        FinalWave();
+                    }
                     
                 }
                 else if (runOnce)
                 {
+                    audioSource.clip = AudioManagerBB.Instance.gameStart;
+                    audioSource.Play();
                     StartCoroutine(TimeBetweenWaves());
                 }
             }
@@ -132,9 +141,7 @@ public class SpawnEnemyManager : MonoBehaviour
         runOnce = false;
         yield return new WaitForSeconds(20f);
 
-        audioSource.clip = AudioManagerBB.Instance.gameStart;
-        audioSource.Play();
-        yield return new WaitForSeconds(2);
+        
 
         audioSource.clip = audioWaveClips[lvlCounter];
         audioSource.Play();

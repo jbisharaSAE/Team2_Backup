@@ -56,13 +56,13 @@ namespace Nokobot.Assets.Crossbow
                     arrow.GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * shotPower);
 
 
-                    xBowAnimController.SetTrigger("normalTrigger");
+                    xBowAnimController.SetBool("trigger", true);
 
 
                     if (shootGap == 0)
                     {
                         arrow.GetComponent<AudioSource>().volume = 0.5f;
-                        xBowAnimController.SetTrigger("rapidTrigger");
+                        //xBowAnimController.SetTrigger("rapidTrigger");
                     }
                     else
                     {
@@ -74,6 +74,7 @@ namespace Nokobot.Assets.Crossbow
 
 
                 }
+               
 
                 // to flick to the next tutorial slide, once player has  shot an arrow
                 if (runOnce)
@@ -85,9 +86,12 @@ namespace Nokobot.Assets.Crossbow
                 }
 
             }
+            else
+            {
+                xBowAnimController.SetBool("trigger", false);
+            }
 
 
-          
 
             if (myScoreScript.progressScore >= 100f)
             {
