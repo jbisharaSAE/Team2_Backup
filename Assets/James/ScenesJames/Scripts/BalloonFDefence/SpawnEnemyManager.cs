@@ -79,11 +79,7 @@ public class SpawnEnemyManager : MonoBehaviour
             else
             {
                 runOnce = true;
-                ++lvlCounter;
                 
-
-                //increases number of enemies that spawn
-                enemyCountTotal += difficultyCounter;
                 
                 
 
@@ -125,6 +121,11 @@ public class SpawnEnemyManager : MonoBehaviour
 
     IEnumerator TimeBetweenWaves()
     {
+        ++lvlCounter;
+
+
+        //increases number of enemies that spawn
+        enemyCountTotal += difficultyCounter;
 
         print("testing wave between");
         runOnce = false;

@@ -9,10 +9,16 @@ public class RainbowBalloon : MonoBehaviour
 
     public int maxHits;
 
-
-    
     private GameObject parentObj;
     private int hitCounter = 0;
+
+    private WaypointSystem wayPointScript;
+
+
+    private void Start()
+    {
+        wayPointScript = GameObject.Find("EGO Waypoint System").GetComponent<WaypointSystem>();
+    }
 
     public void ExplodeBalloon()
     {
@@ -20,6 +26,8 @@ public class RainbowBalloon : MonoBehaviour
 
         AudioManagerBB.Instance.PlayAudio(balloonPop);
 
+        wayPointScript.StartCoroutine(wayPointScript.EndGame());
+        
         
     }
 
