@@ -38167,7 +38167,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: d9ffbab9fd319f547a0fb8e959cc8bd4, type: 3}
   audioSource: {fileID: 0}
   gameOver: 1
-  myText: {fileID: 0}
+  myText: {fileID: 831401259}
 --- !u!82 &1190442131
 AudioSource:
   m_ObjectHideFlags: 0
@@ -77647,6 +77647,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6735405949329691034, guid: 4026cf9168f4e904bbbbd9c9bbb92a8e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 49.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6735405949329691034, guid: 4026cf9168f4e904bbbbd9c9bbb92a8e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6735405948940670045, guid: 4026cf9168f4e904bbbbd9c9bbb92a8e,
         type: 3}
       propertyPath: m_Sprite
@@ -77772,16 +77782,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.35021782
-      objectReference: {fileID: 0}
-    - target: {fileID: 6735405949329691034, guid: 4026cf9168f4e904bbbbd9c9bbb92a8e,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 49.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6735405949329691034, guid: 4026cf9168f4e904bbbbd9c9bbb92a8e,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6131231768201746641, guid: 4026cf9168f4e904bbbbd9c9bbb92a8e,
         type: 3}
