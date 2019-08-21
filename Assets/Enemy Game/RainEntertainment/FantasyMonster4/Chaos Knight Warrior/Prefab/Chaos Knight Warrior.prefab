@@ -2056,7 +2056,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4874904195981372}
   - component: {fileID: 95745543015831712}
+  - component: {fileID: 5704838744226813275}
   - component: {fileID: 64107948350120774}
+  - component: {fileID: 6407685693566509513}
   m_Layer: 0
   m_Name: Chaos Knight Warrior
   m_TagString: Untagged
@@ -2073,7 +2075,7 @@ Transform:
   m_GameObject: {fileID: 1778325559902364}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children:
   - {fileID: 4873700225377562}
   - {fileID: 5498518347620011224}
@@ -2099,6 +2101,28 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!195 &5704838744226813275
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1778325559902364}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!64 &64107948350120774
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2113,6 +2137,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 0}
+--- !u!114 &6407685693566509513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1778325559902364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0354876b58ef8147a854c157ebcaf25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  KnightRunning: 0
 --- !u!1 &1789978871719344
 GameObject:
   m_ObjectHideFlags: 0
@@ -2402,6 +2439,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Balloon Rainbow
+      objectReference: {fileID: 0}
+    - target: {fileID: 1549093996346149400, guid: ef7359d473300554e90228d5563f76b8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1549093996345726520, guid: ef7359d473300554e90228d5563f76b8,
         type: 3}
