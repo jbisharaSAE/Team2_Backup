@@ -23,8 +23,6 @@ public class KnightAnim : MonoBehaviour
     void Update()
     {
 
-
-        chaos.SetDestination(target);
-
+        chaos.SetDestination(target.transform.position);
     }
 }
