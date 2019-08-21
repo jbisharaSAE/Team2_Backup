@@ -123,17 +123,23 @@ public class SpawnEnemyManager : MonoBehaviour
     {
         ++lvlCounter;
 
-
+        spawnInterval = 3;
+        countdown = 10;
         //increases number of enemies that spawn
         enemyCountTotal += difficultyCounter;
 
         print("testing wave between");
         runOnce = false;
         yield return new WaitForSeconds(20f);
+
+        audioSource.clip = AudioManagerBB.Instance.gameStart;
+        audioSource.Play();
+        yield return new WaitForSeconds(2);
+
         audioSource.clip = audioWaveClips[lvlCounter];
         audioSource.Play();
 
-        AudioManagerBB.Instance.PlayAudio(AudioManagerBB.Instance.gameStart);
+        //AudioManagerBB.Instance.PlayAudio(AudioManagerBB.Instance.gameStart);
 
         audioSource.Play();
         enemyCounter = 0;
