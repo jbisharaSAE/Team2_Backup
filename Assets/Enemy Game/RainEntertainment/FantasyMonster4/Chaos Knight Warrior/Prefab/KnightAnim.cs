@@ -16,7 +16,9 @@ public class KnightAnim : MonoBehaviour
 
         target = GameObject.FindGameObjectWithTag("MyTarget");
 
-        
+        KnightAn.SetBool("KnightRunning", false);
+        KnightAn.SetBool("KnightAttacking", false);
+        KnightAn.SetBool("KnightDead", false);
     }
 
     // Update is called once per frame
@@ -24,5 +26,34 @@ public class KnightAnim : MonoBehaviour
     {
 
         chaos.SetDestination(target.transform.position);
+
+        {
+            if (KnightRunning)
+            {
+                //moves towards target on navmesh
+                chaos.SetDestination(target.transform.position);
+
+                float distance = Vector3.Distance(transform.position, target.transform.position);
+
+                if (distance < 5f)
+                {
+                    //enemyAnim.Play("Attack");
+
+                    print("testing distance if statement");
+                    KnightAn.SetBool("KnightRunning", false);
+                   KnightAn.SetBool("KnightAttacking", true);
+                }
+            }
+            else
+            {
+                KnightAn.SetBool("KnightAttacking", false);
+                KnightAn.SetBool("KnightRunning", false);
+                KnightAn.SetBool("KnightDead", true);
+            }
+
+
+        }
+
+
     }
 }
