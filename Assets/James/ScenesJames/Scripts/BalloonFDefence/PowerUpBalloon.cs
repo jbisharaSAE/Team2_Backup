@@ -74,7 +74,7 @@ public class PowerUpBalloon : MonoBehaviour
             //orange balloon
             case 1:
                 powerUpManagerScript.SendMessage("OrangePowerUpHit");
-                Destroy(gameObject);
+                Destroy(gameObject, 1f);
                 //AudioManagerBB.Instance.PlayAudio(slowTimeAudio);
                 myAudioSource.clip = slowTimeAudio;
                 myAudioSource.Play();
@@ -82,7 +82,7 @@ public class PowerUpBalloon : MonoBehaviour
             //green ballon
             case 2:
                 powerUpManagerScript.SendMessage("GreenPowerUpHit");
-                Destroy(gameObject);
+                Destroy(gameObject, 1f);
                 //AudioManagerBB.Instance.PlayAudio(healAudio);
                 myAudioSource.clip = healAudio;
                 myAudioSource.Play();

@@ -88,8 +88,7 @@ public class SpawnEnemyManager : MonoBehaviour
                 {
                     if (runOnceEnemy)
                     {
-                        audioSource.clip = AudioManagerBB.Instance.gameStart;
-                        audioSource.Play();
+                       
                         runOnceEnemy = false;
                         FinalWave();
                     }
@@ -97,8 +96,7 @@ public class SpawnEnemyManager : MonoBehaviour
                 }
                 else if (runOnce)
                 {
-                    audioSource.clip = AudioManagerBB.Instance.gameStart;
-                    audioSource.Play();
+                   
                     StartCoroutine(TimeBetweenWaves());
                 }
             }
@@ -141,8 +139,7 @@ public class SpawnEnemyManager : MonoBehaviour
         runOnce = false;
         yield return new WaitForSeconds(20f);
 
-        
-
+      
         audioSource.clip = audioWaveClips[lvlCounter];
         audioSource.Play();
 
