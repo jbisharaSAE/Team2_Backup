@@ -13,11 +13,14 @@ public class RainbowBalloon : MonoBehaviour
     private int hitCounter = 0;
 
     private WaypointSystem wayPointScript;
+    
 
 
     private void Start()
     {
         wayPointScript = GameObject.Find("EGO Waypoint System").GetComponent<WaypointSystem>();
+        parentObj = transform.parent.gameObject;
+        
     }
 
     public void ExplodeBalloon()
@@ -47,7 +50,7 @@ public class RainbowBalloon : MonoBehaviour
             else
             {
                 AudioManagerBB.Instance.PlayAudio(balloonHit);
-                parentObj.SendMessage("StartRunning");
+                parentObj.GetComponent<KnightAnim>().isRunning = false;
             }
             
 

@@ -2065,7 +2065,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4874904195981372
 Transform:
   m_ObjectHideFlags: 0
@@ -2149,7 +2149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0354876b58ef8147a854c157ebcaf25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  KnightRunning: 0
+  isRunning: 0
 --- !u!1 &1789978871719344
 GameObject:
   m_ObjectHideFlags: 0
@@ -2435,16 +2435,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4874904195981372}
     m_Modifications:
-    - target: {fileID: 1549093996346149400, guid: ef7359d473300554e90228d5563f76b8,
-        type: 3}
-      propertyPath: m_Name
-      value: Balloon Rainbow
-      objectReference: {fileID: 0}
-    - target: {fileID: 1549093996346149400, guid: ef7359d473300554e90228d5563f76b8,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1549093996345726520, guid: ef7359d473300554e90228d5563f76b8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2498,6 +2488,16 @@ PrefabInstance:
     - target: {fileID: 1549093996345726520, guid: ef7359d473300554e90228d5563f76b8,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1549093996346149400, guid: ef7359d473300554e90228d5563f76b8,
+        type: 3}
+      propertyPath: m_Name
+      value: Balloon Rainbow
+      objectReference: {fileID: 0}
+    - target: {fileID: 1549093996346149400, guid: ef7359d473300554e90228d5563f76b8,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

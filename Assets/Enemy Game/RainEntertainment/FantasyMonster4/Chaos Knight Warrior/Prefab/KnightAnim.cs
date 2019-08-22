@@ -4,56 +4,58 @@ using UnityEngine;
 using UnityEngine.AI;
 public class KnightAnim : MonoBehaviour
 {
-    private NavMeshAgent chaos;
-    private Animator KnightAn;
-    public bool KnightRunning;
+    private NavMeshAgent chaosKnight;
+    private Animator knightAnim;
+    public bool isRunning;
             
     private GameObject target;
     // Start is called before the first frame update
     void Start()
     {
-        chaos = GetComponent<NavMeshAgent>();
+        chaosKnight = GetComponent<NavMeshAgent>();
 
         target = GameObject.FindGameObjectWithTag("MyTarget");
 
-        KnightAn.SetBool("KnightRunning", false);
-        KnightAn.SetBool("KnightAttacking", false);
-        KnightAn.SetBool("KnightDead", false);
+        knightAnim.SetBool("KnightRunning", false);
+        knightAnim.SetBool("KnightAttacking", false);
+        knightAnim.SetBool("KnightDead", false);
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        chaos.SetDestination(target.transform.position);
+        //chaosKnight.SetDestination(target.transform.position);
 
+
+        if (isRunning)
         {
-            if (KnightRunning)
+            //moves towards target on navmesh
+            chaosKnight.SetDestination(target.transform.position);
+
+            float distance = Vector3.Distance(transform.position, target.transform.position);
+
+            if (distance < 5f)
             {
-                //moves towards target on navmesh
-                chaos.SetDestination(target.transform.position);
+                //enemyAnim.Play("Attack");
 
-                float distance = Vector3.Distance(transform.position, target.transform.position);
-
-                if (distance < 5f)
-                {
-                    //enemyAnim.Play("Attack");
-
-                    print("testing distance if statement");
-                    KnightAn.SetBool("KnightRunning", false);
-                   KnightAn.SetBool("KnightAttacking", true);
-                }
+                //print("testing distance if statement");
+                knightAnim.SetBool("KnightRunning", false);
+                knightAnim.SetBool("KnightAttacking", true);
+                knightAnim.SetBool("KnightDead", false);
             }
-            else
-            {
-                KnightAn.SetBool("KnightAttacking", false);
-                KnightAn.SetBool("KnightRunning", false);
-                KnightAn.SetBool("KnightDead", true);
-            }
-
-
+        }
+        else
+        {
+            knightAnim.SetBool("KnightAttacking", false);
+            knightAnim.SetBool("KnightRunning", false);
+            knightAnim.SetBool("KnightDead", true);
         }
 
 
+
+
+
     }
+
 }

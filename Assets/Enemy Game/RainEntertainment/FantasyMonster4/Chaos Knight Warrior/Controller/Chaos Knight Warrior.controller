@@ -107,6 +107,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: KnightRunning
     m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: KnightAttacking
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102568078035320010}
   m_Solo: 0
@@ -182,6 +185,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: KnightRunning
     m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: KnightDead
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102765734416981864}
   m_Solo: 0
@@ -209,6 +215,9 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: KnightAttacking
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: KnightRunning
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102568078035320010}
