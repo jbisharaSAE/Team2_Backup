@@ -13,6 +13,7 @@ public class KnightAnim : MonoBehaviour
     void Start()
     {
         chaosKnight = GetComponent<NavMeshAgent>();
+        knightAnim = GetComponent<Animator>();
 
         target = GameObject.FindGameObjectWithTag("MyTarget");
 
