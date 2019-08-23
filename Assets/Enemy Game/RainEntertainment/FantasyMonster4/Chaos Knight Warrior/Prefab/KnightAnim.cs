@@ -6,7 +6,7 @@ public class KnightAnim : MonoBehaviour
 {
     private NavMeshAgent chaosKnight;
     private Animator knightAnim;
-    public bool isRunning;
+    public bool KnightRunning;
             
     private GameObject target;
     // Start is called before the first frame update
@@ -17,7 +17,7 @@ public class KnightAnim : MonoBehaviour
 
         target = GameObject.FindGameObjectWithTag("MyTarget");
 
-        knightAnim.SetBool("KnightRunning", false);
+        knightAnim.SetBool("KnightRunning",true);
         knightAnim.SetBool("KnightAttacking", false);
         knightAnim.SetBool("KnightDead", false);
     }
@@ -29,7 +29,7 @@ public class KnightAnim : MonoBehaviour
         //chaosKnight.SetDestination(target.transform.position);
 
 
-        if (isRunning)
+        if (KnightRunning)
         {
             //moves towards target on navmesh
             chaosKnight.SetDestination(target.transform.position);
