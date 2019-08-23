@@ -2056,9 +2056,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4874904195981372}
   - component: {fileID: 95745543015831712}
+  - component: {fileID: 6407685693566509513}
   - component: {fileID: 5704838744226813275}
   - component: {fileID: 64107948350120774}
-  - component: {fileID: 6407685693566509513}
   m_Layer: 0
   m_Name: Chaos Knight Warrior
   m_TagString: Untagged
@@ -2095,12 +2095,25 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 5f5809b798c1f3040b314c9ed847ef9d, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6407685693566509513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1778325559902364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0354876b58ef8147a854c157ebcaf25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isRunning: 0
 --- !u!195 &5704838744226813275
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2137,19 +2150,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 0}
---- !u!114 &6407685693566509513
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1778325559902364}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0354876b58ef8147a854c157ebcaf25, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isRunning: 0
 --- !u!1 &1789978871719344
 GameObject:
   m_ObjectHideFlags: 0
@@ -2458,7 +2458,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   balloonPop: {fileID: 8300000, guid: 1c7a8f02e1b859c4d9f63de0fedba527, type: 3}
   balloonHit: {fileID: 8300000, guid: 6514e0924f713a845b45e2b980c54f3e, type: 3}
-  fireWorkSound: {fileID: 8300000, guid: c68d43f62c7d27f4c99dce376e6b8426, type: 3}
   maxHits: 10
 --- !u!1001 &6427152915730488032
 PrefabInstance:
@@ -2467,6 +2466,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4874904195981372}
     m_Modifications:
+    - target: {fileID: 1549093996346149400, guid: ef7359d473300554e90228d5563f76b8,
+        type: 3}
+      propertyPath: m_Name
+      value: Balloon Rainbow
+      objectReference: {fileID: 0}
+    - target: {fileID: 1549093996346149400, guid: ef7359d473300554e90228d5563f76b8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1549093996345726520, guid: ef7359d473300554e90228d5563f76b8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2521,16 +2530,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1549093996346149400, guid: ef7359d473300554e90228d5563f76b8,
-        type: 3}
-      propertyPath: m_Name
-      value: Balloon Rainbow
-      objectReference: {fileID: 0}
-    - target: {fileID: 1549093996346149400, guid: ef7359d473300554e90228d5563f76b8,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef7359d473300554e90228d5563f76b8, type: 3}

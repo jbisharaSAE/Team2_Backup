@@ -50,7 +50,7 @@ public class RainbowBalloon : MonoBehaviour
             else
             {
                 AudioManagerBB.Instance.PlayAudio(balloonHit);
-                parentObj.GetComponent<KnightAnim>().isRunning = false;
+                parentObj.GetComponent<KnightAnim>().KnightRunning = false;
             }
             
 
