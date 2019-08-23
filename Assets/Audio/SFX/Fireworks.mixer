@@ -6,7 +6,7 @@ AudioMixerController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MetalImpact
+  m_Name: Fireworks
   m_OutputGroup: {fileID: 0}
   m_MasterGroup: {fileID: 24300002}
   m_Snapshots:
@@ -16,10 +16,7 @@ AudioMixerController:
   m_EnableSuspend: 1
   m_UpdateMode: 0
   m_ExposedParameters: []
-  m_AudioMixerGroupViews:
-  - guids:
-    - 3fbe94b83b446624b82f3f76fa79e717
-    name: View
+  m_AudioMixerGroupViews: []
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
 --- !u!243 &24300002
@@ -30,10 +27,10 @@ AudioMixerGroupController:
   m_PrefabAsset: {fileID: 0}
   m_Name: Master
   m_AudioMixer: {fileID: 24100000}
-  m_GroupID: 3fbe94b83b446624b82f3f76fa79e717
+  m_GroupID: dc3cd958de9037f47845a8c461357877
   m_Children: []
-  m_Volume: 294f6076e31935647bb6cd19e2e5e9b9
-  m_Pitch: 2eab1143121ed4642be6d33518ed4b0f
+  m_Volume: c0fa01f52025c874a8156fe32675a741
+  m_Pitch: a0ccf1f521f1c5e4aa61d33ab653913d
   m_Effects:
   - {fileID: 24400004}
   m_UserColorIndex: 0
@@ -47,9 +44,9 @@ AudioMixerEffectController:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 
-  m_EffectID: ee6997aed11eebf4baeae48482d59aa6
+  m_EffectID: e99e8a54ff3804243b86ef370528a07a
   m_EffectName: Attenuation
-  m_MixLevel: 9d6d02842a3123b40920e3491ed6df95
+  m_MixLevel: 953582abfb22d744bbd4ad60f891f704
   m_Parameters: []
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
@@ -62,8 +59,8 @@ AudioMixerSnapshotController:
   m_PrefabAsset: {fileID: 0}
   m_Name: Snapshot
   m_AudioMixer: {fileID: 24100000}
-  m_SnapshotID: 6235f646d7044bc4b90ba36090ffafb4
+  m_SnapshotID: 001ff793dc1c5f64dba01697ce5a3f2d
   m_FloatValues:
-    2eab1143121ed4642be6d33518ed4b0f: 1
-    294f6076e31935647bb6cd19e2e5e9b9: 20
+    c0fa01f52025c874a8156fe32675a741: 20
+    a0ccf1f521f1c5e4aa61d33ab653913d: 1.5
   m_TransitionOverrides: {}
