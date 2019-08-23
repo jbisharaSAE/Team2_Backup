@@ -9,7 +9,7 @@ public class ArrowBlue : MonoBehaviour
     public AudioClip arrowReload;
     public AudioClip metalImpact;
     public AudioSource myAudioSource;
-    public GameObject myArrow;
+    //public GameObject myArrow;
 
 
     private void Start()
@@ -28,7 +28,7 @@ public class ArrowBlue : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Destroy(myArrow);
+        Destroy(gameObject);
 
         if(collision.gameObject.tag == "Enemy")
         {
@@ -38,6 +38,10 @@ public class ArrowBlue : MonoBehaviour
             myAudioSource.clip = metalImpact;
             myAudioSource.Play();
         }
+        //else if(collision.gameObject.tag == "Rainbow")
+        //{
+        //    Debug.Log("testing balloon collision");
+        //}
 
 
     }

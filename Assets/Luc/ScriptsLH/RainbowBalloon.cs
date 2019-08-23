@@ -37,21 +37,21 @@ public class RainbowBalloon : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
 
-        
+        Debug.Log("testing collision rainbow");
         if (collision.gameObject.tag == "Arrow")
         {
             ++hitCounter;
+            Debug.Log("Hit Counter: " + hitCounter);
+            AudioManagerBB.Instance.PlayAudio(balloonHit);
 
-            if(hitCounter > maxHits)
+            if (hitCounter > maxHits)
             {
                 Destroy(collision.gameObject);
                 ExplodeBalloon();
-            }
-            else
-            {
-                AudioManagerBB.Instance.PlayAudio(balloonHit);
+                
                 parentObj.GetComponent<KnightAnim>().KnightRunning = false;
             }
+            
             
 
             

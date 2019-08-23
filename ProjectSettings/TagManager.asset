@@ -16,6 +16,7 @@ TagManager:
   - MyTarget3
   - MyTarget4
   - Powerup
+  - Rainbow
   layers:
   - Default
   - TransparentFX

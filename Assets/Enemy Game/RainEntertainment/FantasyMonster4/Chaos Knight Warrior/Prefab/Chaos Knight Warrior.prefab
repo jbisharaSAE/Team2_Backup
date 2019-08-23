@@ -2113,7 +2113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0354876b58ef8147a854c157ebcaf25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isRunning: 0
+  KnightRunning: 1
 --- !u!195 &5704838744226813275
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2124,7 +2124,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 35
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -2443,7 +2443,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &1425374411530778461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2473,8 +2473,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1549093996346149400, guid: ef7359d473300554e90228d5563f76b8,
         type: 3}
-      propertyPath: m_IsActive
-      value: 1
+      propertyPath: m_TagString
+      value: Rainbow
       objectReference: {fileID: 0}
     - target: {fileID: 1549093996345726520, guid: ef7359d473300554e90228d5563f76b8,
         type: 3}
