@@ -2075,7 +2075,7 @@ Transform:
   m_GameObject: {fileID: 1778325559902364}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalScale: {x: 9, y: 9, z: 9}
   m_Children:
   - {fileID: 4873700225377562}
   - {fileID: 5498518347620011224}
@@ -2459,6 +2459,19 @@ MonoBehaviour:
   balloonPop: {fileID: 8300000, guid: 1c7a8f02e1b859c4d9f63de0fedba527, type: 3}
   balloonHit: {fileID: 8300000, guid: 6514e0924f713a845b45e2b980c54f3e, type: 3}
   maxHits: 10
+--- !u!135 &642673577042758493
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5498518347620045048}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.07
+  m_Center: {x: 0, y: 0.15, z: 0}
 --- !u!1001 &6427152915730488032
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2533,15 +2546,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef7359d473300554e90228d5563f76b8, type: 3}
---- !u!1 &5498518347620045048 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1549093996346149400, guid: ef7359d473300554e90228d5563f76b8,
-    type: 3}
-  m_PrefabInstance: {fileID: 6427152915730488032}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5498518347620011224 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1549093996345726520, guid: ef7359d473300554e90228d5563f76b8,
+    type: 3}
+  m_PrefabInstance: {fileID: 6427152915730488032}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5498518347620045048 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1549093996346149400, guid: ef7359d473300554e90228d5563f76b8,
     type: 3}
   m_PrefabInstance: {fileID: 6427152915730488032}
   m_PrefabAsset: {fileID: 0}
